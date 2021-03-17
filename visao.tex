@@ -30,8 +30,8 @@
 \documentclass[
 	% -- opções da classe memoir --
 	12pt,				% tamanho da fonte
-	openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
-	twoside,			% para impressão em recto e verso. Oposto a oneside
+	%openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
+	oneside,			% twoside para impressão em recto e verso. Oposto a oneside
 	a4paper,			% tamanho do papel.
 	% -- opções da classe abntex2 --
 	%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
@@ -95,9 +95,26 @@
 \usepackage{booktabs}
 
 % ---
-% Pacote para permitir tabelas ocuparem múltiplas páginas (incompatível com Overleaf gratuito)
+% Pacote para permitir tabelas ocuparem múltiplas páginas (cuidado com Overleaf gratuito)
 % ---
-%\usepackage{longtable}
+\usepackage{longtable}
+
+% ---
+% Pacote para controlar formatação das legendas
+% ---
+\usepackage{caption}
+\captionsetup[longtable]{font=normalsize,singlelinecheck=false,justification=raggedright,position=top}
+
+% ---
+% Pacote para manter as tabelas dentro das seções em que foram criadas
+% ---
+\usepackage[section]{placeins}
+
+% ---
+% Pacote para controlar floats, não usar em conjunto com o pacote float comum
+% ---
+% \usepackage{floatrow}
+% \floatsetup[longtable]{LTcapwidth=table}
 
 % ---
 % CONFIGURAÇÕES DE PACOTES
@@ -128,10 +145,10 @@
 % ---
 % Informações de dados para CAPA e FOLHA DE ROSTO
 % ---
-\titulo{Notório \\ \huge{Visão do Projeto}}
+\titulo{NotoriousNote \\ \huge{Visão do Projeto}}
 \autor{Equipe EmptyCoffeeCups \\ Davi Antônio da Silva Santos \and Marcos Adriano \and Jonathan Jorge Barbosa Oliveira \and Wellington Jonathan}
 \local{Brasília, Distrito Federal, Brasil}
-\data{2021, v2021.02.18}
+\data{2021, v2021.03.11}
 \instituicao{%
   Universidade de Brasília -- UnB
   \par
@@ -140,7 +157,7 @@
 \tipotrabalho{Relatório técnico}
 % O preambulo deve conter o tipo do trabalho, o objetivo,
 % o nome da instituição e a área de concentração
-\preambulo{Documento de visão e planejamento do projeto Notório.}
+\preambulo{Documento de visão e planejamento do projeto NotoriousNote.}
 % ---
 
 % ---
@@ -302,11 +319,11 @@
 \begin{table}[ht]
 \IBGEtab{%\caption{}\label{}%
 }{%
-\begin{tabular}{@{}llll@{}}
+\begin{tabular}{@{}p{0.1\textwidth}p{0.1\textwidth}p{0.5\textwidth}p{0.2\textwidth}@{}}
 \toprule
 \textbf{Data} & \textbf{Versão} & \textbf{Descrição} & \textbf{Autor} \\ \midrule
 18/02/2021 & 2021.02.18 & Versão inicial & Equipe EmptyCoffeCups \\ \hline
- &  &  &  \\ \midrule
+09/03/2021 & 2021.03.11 & \begin{tabular}{@{}p{0.5\textwidth}@{}}Renomear projeto de Notório para NotoriousNote\\Remoção do excesso de páginas em branco\\Modificação da declaração do problema\\Modificação dos objetivos de projeto, aumentando o escopo deste\\Modificação no escopo do MVP\\Acreéscimo do professor na organização do projeto\\Remoção do prazo estimado nas ferramentas de hardware e software\\Clarificação da escalabilidade dos problemas\\Adequação da matriz de comunicação às práticas do projeto\\Acréscimo dos itens dos \textit{backlogs} \\ Atualizar versões das ferramentas de software \end{tabular} & Equipe EmptyCoffeCups \\ \midrule
  &  &  &  \\ \midrule
  &  &  &  \\ \bottomrule
 \end{tabular}%
@@ -340,6 +357,7 @@
   \item[BLoC] \foreignlanguage{english}{\textit{Business Logic of Component}}
   \item[DB] \foreignlanguage{english}{\textit{Database}}
   \item[IDE] \foreignlanguage{english}{\textit{Integrated Development Environment}}
+  \item[SAFe] \foreignlanguage{english}{\textit{Scaled Agile Framework}}
   \item[SDK] \foreignlanguage{english}{\textit{Software Development Kit}}
   \item[SOLID] \foreignlanguage{english}{\textit{Single responsibility, Open-closed, Liskov substitution, Interface segregation, Dependency inversion}}
   \item[UI] \foreignlanguage{english}{\textit{User Interface}}
@@ -387,13 +405,13 @@
 \begin{tabular}{@{}p{0.29\textwidth}p{0.7\textwidth}@{}}
 \toprule
 % descreva o problema
-O problema & O principal aplicativo de notas rápidas no Android, o Google Keep, dificulta a exportação dos dados do usuário, obstando o backup das mesmas \\ \midrule
+O problema & Esquecer de coisas importantes do cotidiano  \\ \midrule
 % informe as partes interessadas afetadas pelo problema
-Afeta & usuários que queiram exportar rapidamente suas notas \\ \midrule
+Afeta & usuários que queiram se organizar criando anotações em seu  \textit{smartphone} \\ \midrule
 % qual é o impacto desse problema?
-Cujo impacto é &  demora para exportar as notas usando o processo comum (Google Takeout), que envolve acessar uma interface específica de exportação e geração de um arquivo compactado com as notas \\ \midrule
+Cujo impacto é & esquecer de coisas úteis do cotidiano \\ \midrule
 % liste alguns benefícios principais de uma solução de sucesso
-Uma solução de sucesso seria & permitir que os usuários exportem as notas criadas em formatos facilmente exportáveis para o armazenamento local e façam o backup na nuvem \\ \bottomrule
+Uma solução de sucesso seria & permitir que os criem anotações com a possibilidade de configurar lembretes para notificar anotações específicas, criem anotações para lista de tarefas, classifiquem anotações por grupos, realizem backups remotos e locais das anotações \\ \bottomrule
 \end{tabular}%
 }{%\fonte{}%
 }
@@ -401,7 +419,9 @@ Uma solução de sucesso seria & permitir que os usuários exportem as notas cri
 
 \section{Objetivos do Projeto}
 %[Forneça o objetivo principal do projeto, e objetivos secundários (caso haja)]
-Criar uma aplicação que permita o usuário exportar os dados de suas notas e listas de tarefas para formatos que podem ser facilmente importados em outros aplicativos ou armazenados em dispositivos externos, como JSON e \texttt{org-mode}. Além disso, também deve ser possível fazer o backup dos dados do dispositivo na nuvem e compartilhar a informação em formato legível para outros aplicativos usando funções nativas do sistema operacional móvel.
+Criar uma aplicação que permita o usuário crie anotações, listas de tarefa, lembretes para as anotações. Também deve ser possível ao usuário acessar \textit{templates} de anotações para criar modelos comuns mais rapidamente.
+
+A aplicação também deve ser capaz de exportar os dados de suas notas e listas de tarefas para formatos que podem ser importados em outros aplicativos ou armazenados em dispositivos externos: JSON, \texttt{org-mode} e texto puro. Além disso, também deve ser possível fazer o backup dos dados do dispositivo na nuvem e compartilhar a informação com outros aplicativos usando funções nativas do sistema operacional móvel.
 
 \chapter{\foreignlanguage{english}{\textit{Stakeholders}}}
 % [Forneça a lista de stakeholders envolvidos no projeto]
@@ -440,13 +460,13 @@ Usuário & Pessoas que utilizarão o aplicativo & \makecell[c{p{0.5\textwidth}}]
 % declaração da necessidade ou oportunidade
 \textbf{Quem} & usuários que queiram controle sobre as suas notas escritas em um celular, mas não querem abandonar a comodidade de armazenarem seus dados na nuvem \\ \midrule
 % O [nome do produto] & é um/uma [categoria do produto]
-\textbf{O Notório} & é uma aplicação móvel de registro de notas rápidas \\ \midrule
+\textbf{O NotoriousNote} & é uma aplicação móvel de registro de notas \\ \midrule
 % declaração do principal benefício; ou seja, a razão convincente para comprar, utilizar, etc.
 \textbf{Que} & permite que o usuário exporte os dados da própria aplicação, de modo que possa armazená-los em outro lugar com o objetivo de, por exemplo, realizar backup de notas importantes \\ \hline
 % alternativa competitiva primária
 \textbf{Ao contrário} & do Google Keep, que dificulta a exportação das notas e listas de tarefas feitas no próprio aplicativo \\ \midrule
 % declaração de diferenciação primária
-\textbf{Nosso produto} & permite que o usuário exporte os seus dados em um formato legível e que pode ser usado em outras aplicações \\ \bottomrule
+\textbf{Nosso produto} & permite que o usuário exporte os seus dados em um formato legíveis (JSON, texto puro e \texttt{org-mode}) que podem ser usado em outras aplicações \\ \bottomrule
 \end{tabular}%
 }{%\fonte{}%
 }
@@ -456,11 +476,15 @@ Usuário & Pessoas que utilizarão o aplicativo & \makecell[c{p{0.5\textwidth}}]
 %[Forneça uma lista de características mínimas que o produto deve possuir para que possa ser lançado]
 \begin{itemize}
     \item Aplicação deve ser executável em sistemas operacionais móveis Android com suporte as APIs 24 a 30;
-    \item Suporte a notas de texto com título e conteúdo;
-    \item Suporte a listas de tarefa com título e tarefas que podem ser registradas como terminadas ou não;
-    \item Capacidade de salvar notas e listas de tarefa em nuvem (Cloud Firestore);
-    \item Capacidade de exportar notas e listas de tarefas em JSON;
-    \item Capacidade de ler notas e listas de tarefas salvas localmente em JSON.
+    \item Criar, apagar, editar e visualizar de notas de texto com título e conteúdo;
+    \item Criar, apagar, editar e visualizar etiquetas;
+    \item Atribuir etiquetas a uma anotação;
+    \item Exportar notas e listas de tarefas em texto puro;
+    \item Visualizar notas por etiquetas específicas.
+    % \item Criação de listas de tarefa com título e tarefas que podem ser registradas como terminadas ou não;
+    % \item Capacidade de salvar notas e listas de tarefa em nuvem (Cloud Firestore);
+    % \item Capacidade de exportar notas e listas de tarefas em JSON;
+    % \item Capacidade de ler notas e listas de tarefas salvas localmente em JSON.
 \end{itemize}
 
 \chapter{Visão Geral do Projeto}
@@ -473,12 +497,13 @@ A organização do projeto seguirá a divisão de papéis proposta pelo \textit{
 \caption{Organização do projeto}%
 \label{tab:organizacao_projeto}%
 }{%
-\begin{tabular}{@{}p{0.24\textwidth}p{0.24\textwidth}p{0.24\textwidth}p{0.24\textwidth}@{}}
+\begin{tabular}{@{}p{0.2\textwidth}p{0.24\textwidth}p{0.24\textwidth}p{0.24\textwidth}@{}}
 \toprule
 \textbf{Papel} & \textbf{Atribuições} & \textbf{Responsável} & \textbf{Participantes} \\ \midrule
-Desenvolvedor & \makecell[c{p{0.24\textwidth}}]{Membro da equipe ágil\\Execução das disciplinas de Engenharia de Software} & Todos & Todos \\ \midrule
+Desenvolvedor & \makecell[c{p{0.24\textwidth}}]{Membro da equipe ágil\\Execução das disciplinas de Engenharia de Software} & Jonathan Jorge, \foreignlanguage{english}{Wellington} Jonathan & Davi Antônio, Jonathan Jorge, Marcos Adriano, Wellington Jonathan\\ \midrule
 Scrum Master & Responsável pelo cumprimento da metodologia de desenvolvimento Scrum & Marcos Adriano & - \\ \midrule
-Product Owner & Responsável por manter o conceito das funcionalidades e melhorias, de forma que sigam a visão definida para o produto ou projeto. & Davi Antônio & - \\ \bottomrule
+Product Owner & Responsável por manter o conceito das funcionalidades e melhorias, de forma que sigam a visão definida para o produto ou projeto. & Davi Antônio & - \\ \midrule
+Professor Orientador & Professor da disciplina de Requisitos de Software & Professor Dr. Marsicano & Professor Dr. Marsicano \\ \bottomrule
 \end{tabular}%
 }{%\fonte{}%
 }
@@ -494,10 +519,10 @@ Product Owner & Responsável por manter o conceito das funcionalidades e melhori
 \caption{Infraestrutura de hardware necessária}%
 \label{tab:infra_hardware}%
 }{%
-\begin{tabular}{@{}p{0.14\textwidth}p{0.14\textwidth}p{0.27\textwidth}p{0.05\textwidth}p{0.12\textwidth}p{0.12\textwidth}@{}}
+\begin{tabular}{@{}p{0.14\textwidth}p{0.14\textwidth}p{0.27\textwidth}p{0.05\textwidth}p{0.2\textwidth}@{}}
 \toprule
-\textbf{Perfil} & \textbf{Tipo} & \textbf{Configurações} & \textbf{Qtd.} & \textbf{Prazo Estimado} & \textbf{Observação} \\ \midrule
-Desenvolvedor & Computador & \makecell[c{p{0.27\textwidth}}]{Interface USB \\ Mínimo 8 GiB RAM \\ Resolução de tela mínima 1280x800 px.} & 04 & 20/05/2021 & - \\ \bottomrule
+\textbf{Perfil} & \textbf{Tipo} & \textbf{Configurações} & \textbf{Qtd.} & \textbf{Observação} \\ \midrule
+Desenvolvedor & Computador & \makecell[c{p{0.27\textwidth}}]{Interface USB \\ Mínimo 8 GiB RAM \\ Resolução de tela mínima 1280x800 px.} & 04 & - \\ \bottomrule
 \end{tabular}%
 }{%\fonte{}%
 }
@@ -511,24 +536,24 @@ Desenvolvedor & Computador & \makecell[c{p{0.27\textwidth}}]{Interface USB \\ M�
 \label{tab:ambiente_software}
 \centering
 \IBGEtabfontsize
-\begin{tabular}{@{}p{0.125\textwidth}p{0.120\textwidth}p{0.115\textwidth}p{0.115\textwidth}p{0.100\textwidth}p{0.115\textwidth}p{0.115\textwidth}@{}}
+\begin{tabular}{@{}p{0.125\textwidth}p{0.145\textwidth}p{0.145\textwidth}p{0.135\textwidth}p{0.100\textwidth}p{0.115\textwidth}@{}}
 \toprule
-\textbf{Perfil} & \textbf{Tipo} & \textbf{Nome} & \textbf{Versão} & \textbf{Licenças} & \textbf{Prazo Est.} & \textbf{Observação} \\ \midrule
-Todos & Controle de Versão & Git & 2.25.1 ou superior & 04 & 20/05/2021 & - \\ \midrule
-Todos & IDE & Android Studio & 4.1.2 & 04 & 20/05/2021 & - \\ \midrule
-Todos & SDK & Flutter & 1.22.6 & 04 & 20/05/2021 & - \\ \midrule
-Todos & Linguagem de programação & Dart & 2.10.5 & 04 & 20/05/2021 & - \\ \midrule
-Todos & Linguagem de programação & Kotlin & 1.4.30 & 04 & 20/05/2021 & - \\ \midrule
-Todos & Extensão do Android Studio & Dart & 201.9317 & 04 & 20/05/2021 & - \\ \midrule
-Todos & Extensão do Android Studio & Flutter & 53.1.1 & 04 & 20/05/2021 & - \\ \midrule
-Todos & Extensão do Android Studio & Kotlin & 1.4.30 & 04 & 20/05/2021 & - \\ \midrule
-Todos & Pacote Flutter & firebase\_core & 0.7.0 & 04 & 20/05/2021 & - \\ \midrule
-Todos & Pacote Flutter & firebase\_auth & 0.20.0+1 & 04 & 20/05/2021 & - \\ \midrule
-Todos & Pacote Flutter & provider & 4.3.3 & 04 & 20/05/2021 & - \\ \midrule
-Todos & Pacote Flutter & cloud\_firestore & 0.16.0 & 04 & 20/05/2021 & - \\ \midrule
-Todos & Dependência Android & google-services & 4.3.5 & 04 & 20/05/2021 & - \\ \midrule
-Todos & Dependência Android & firebase-bom & 26.5.0 & 04 & 20/05/2021 & - \\ \midrule
-Todos & Ferramenta de compilação & gradle & 4.1.2 & 04 & 20/05/2021 & - \\ \bottomrule
+\textbf{Perfil} & \textbf{Tipo} & \textbf{Nome} & \textbf{Versão} & \textbf{Licenças}  & \textbf{Observação} \\ \midrule
+Todos & Controle de Versão & Git & 2.25.1 ou superior & 04  & - \\ \midrule
+Todos & IDE & Android Studio & 4.1.2 & 04  & - \\ \midrule
+Todos & SDK & Flutter & 2.0.1 & 04  & - \\ \midrule
+Todos & Linguagem de programação & Dart & 2.12.0 & 04  & - \\ \midrule
+Todos & Linguagem de programação & Kotlin & 1.4.30 & 04  & - \\ \midrule
+Todos & Extensão do Android Studio & Dart & 201.9335 & 04  & - \\ \midrule
+Todos & Extensão do Android Studio & Flutter & 54.0.1 & 04  & - \\ \midrule
+Todos & Extensão do Android Studio & Kotlin & 1.4.31-release-Studio4.1-1 & 04  & - \\ \midrule
+Todos & Pacote Flutter & firebase\_core & 0.7.0 & 04 & - \\ \midrule
+Todos & Pacote Flutter & firebase\_auth & 0.20.0+1 & 04  & - \\ \midrule
+Todos & Pacote Flutter & provider & 4.3.3 & 04 & - \\ \midrule
+Todos & Pacote Flutter & cloud\_firestore & 0.16.0 & 04  & - \\ \midrule
+Todos & Dependência Android & google-services & 4.3.5 & 04  & - \\ \midrule
+Todos & Dependência Android & firebase-bom & 26.5.0 & 04  & - \\ \midrule
+Todos & Ferramenta de compilação & gradle & 4.1.2 & 04  & - \\ \bottomrule
 \end{tabular}%
 \end{table}
 
@@ -556,7 +581,7 @@ Todos & Ferramenta de compilação & gradle & 4.1.2 & 04 & 20/05/2021 & - \\ \bo
 
 \section{Processo de Desenvolvimento e Mensuração}
 % [Especifique como será acompanhado o progresso, por exemplo, por meio de reuniões de revisão diárias, avaliações de iteração, relatórios de Burndown de Projeto e Burndown de Iteração.]
-A equipe utilizará o \textit{framework} Scrum para gerenciar o projeto. O progresso será acompanhado usando-se um quadro Kanban na plataforma Github, a qual também atua como repositório remoto para o sistema de versionamento distribuído Git, que será utilizado para o controle de versão do código fonte.
+A equipe utilizará o \textit{framework} Scrum, com utilização reuniões semanais no lugar da \textit{daily} e com retrospectiva da \textit{sprint}, para gerenciar o projeto. O progresso será acompanhado usando-se um quadro Kanban na plataforma Github, a qual também atua como repositório remoto para o sistema de versionamento distribuído Git, que será utilizado para o controle de versão do código fonte.
 
 Os requisitos do projeto serão separados em histórias de usuário e estas serão transformadas em cartões de um quadro Kanban que corresponderá ao \textit{backlog} do projeto usando-se o sistema de \textit{issues} disponibilizado pela plataforma.
 
@@ -587,11 +612,11 @@ A comunicação do grupo é feita principalmente pelo Telegram e por reuniões n
 
 
 
-- Comunicar situação do projeto & \begin{tabular}[c]{@{}l@{}}- Equipe \\ - Professor\end{tabular} & - Semanal & \begin{tabular}[c]{@{}p{0.25\textwidth}@{}}- Ata de reunião e\\ - Relatório de Situação do Projeto \end{tabular} \\ \midrule
+- Comunicar situação do projeto & \begin{tabular}[c]{@{}l@{}}- Equipe \\ - Professor\end{tabular} & - Semanal & \begin{tabular}[c]{@{}p{0.25\textwidth}@{}}- Comunicação com o Professor Orientador\\- Atualizações nos \foreignlanguage{english}{\textit{backlogs}} \end{tabular} \\ \midrule
 
 - Comunicar situação entre membros(\textit{Sprint Planning}) & \begin{tabular}[c]{@{}l@{}}- Equipe \\ \end{tabular} & - No inicio da Sprint & \begin{tabular}[c]{@{}p{0.25\textwidth}@{}}-  \textit{Product Backlog} da \textit{Sprint} \\  \end{tabular} \\ \midrule
 
-- Comunicar situação entre membros(\textit{daily}) & \begin{tabular}[c]{@{}l@{}}- Equipe \\ \end{tabular} & - Seg , Quar e Sex & \begin{tabular}[c]{@{}p{0.25\textwidth}@{}}- anotações da \textit{daily} \\  \end{tabular} \\ \midrule
+% - Comunicar situação entre membros(\textit{daily}) & \begin{tabular}[c]{@{}l@{}}- Equipe \\ \end{tabular} & - Seg , Quar e Sex & - \\ \midrule
 
 
 
@@ -600,7 +625,7 @@ A comunicação do grupo é feita principalmente pelo Telegram e por reuniões n
 
 
 
-- Comunicar situação entre membros (\textit{Sprint Retrospective}) & \begin{tabular}[c]{@{}l@{}}- Equipe \\ \end{tabular} & - No final da \textit{Sprint} & \begin{tabular}[c]{@{}p{0.25\textwidth}@{}}- Anotações da \textit{Retrospective} \\  \end{tabular} \\ \bottomrule
+- Comunicar situação entre membros (\textit{Sprint Retrospective}) & \begin{tabular}[c]{@{}l@{}}- Equipe \\ \end{tabular} & - No final da \textit{Sprint} & \begin{tabular}[c]{@{}p{0.25\textwidth}@{}}- Atualizações nos documentos de visão e nos \foreignlanguage{english}{\textit{backlogs}} \\  \end{tabular} \\ \bottomrule
 
 
 
@@ -613,10 +638,9 @@ A comunicação do grupo é feita principalmente pelo Telegram e por reuniões n
 
 Com o andamento do projeto, previsivelmente ocorreram conflitos que devem ser identificados o mais breve possível, e que devem ser imediatamente solucionados. O tratamento desses conflitos deve ser algo orgânico do fluxo de desenvolvimento de software, e ter antecipadamente para diferentes problemas subsequentes frentes de resolução, sendo que nem todo conflito pode ou deve ser solucionado em uma primeira instancia.
 
-O fluxo do projeto deve ter em seu acompanhamento um monitoramento continuo de revisão e correção. Deve-se garantir quando encontrados conflitos esses devem ser imediatamente tratados com prioridade e escalonados para sua dada resolução, evitando necessariamente o comprometimento do fluxo de projeto.
+O fluxo do projeto deve ter em seu acompanhamento um monitoramento continuo de revisão e correção. Deve-se garantir quando encontrados conflitos esses devem ser imediatamente tratados com prioridade para o \textit{Scrum Master} e escalonados, caso seja necessário, ao Professor Orientador para sua dada resolução, evitando o comprometimento do fluxo de projeto.
 
-Quando tratado o \textit{backlog}, todo conflito deve ser mensurado e verificado de antemão, se há a necessidade de encaminhamento a um maior escalonamento, e se houver de que forma o conflito põem em risco o projeto. Vale iterar que antes do encaminhamento deve-se realizar a analise adequada da necessidade de escalonamento do conflito, e qual a instancia que está deve ser alocada. Quando definido devidamente a instancia necessária, agilmente se realizara a documentação e o encaminhamento para o responsável da instancia determinada.
-
+Quando tratado o \textit{backlog}, todo conflito deve ser mensurado e verificado de antemão com o \textit{Product Owner}, se houver problemas na resolução, a situação será levada para o Professor Orientador, assim como conflitos que põem em risco o projeto.
 
 \section{Gerenciamento de Riscos}
 O objetivo principal da Gestão de Riscos é controlar  impedimentos de qualquer tipo, que possa surgir durante o ciclo de desenvolvimento , impedindo o progresso do projeto de acordo com as previsões iniciais. Comumente citado no PMBOK também pode ser utilizado em projetos que utilizem metodologias ágeis  assim como o \textit{Scrum}. Dessas forma os riscos elicitados foram os seguintes:
@@ -628,8 +652,8 @@ O objetivo principal da Gestão de Riscos é controlar  impedimentos de qualquer
 \begin{tabular}{@{}p{0.24\textwidth}p{0.24\textwidth}p{0.24\textwidth}p{0.2\textwidth}@{}}
 \toprule
 \textbf{Código} & \textbf{Risco} & \textbf{Ação} & \textbf{Nível de Risco} \\ \midrule
-RS01 & Não versionamento do código & Refatoração do código para ser aceito na versão mais recente do projeto. & Médio \\ \midrule
-RS02 & Equipe desorganizada  & Reunião para alinhar a equipe. & Baixo \\ \midrule
+RS01 & Não Versionamento do código & Refatoração do código para ser aceito na versão mais recente do projeto. & Médio \\ \midrule
+RS02 & Equipe desorganizada & Reunião para alinhar a equipe. & Baixo \\ \midrule
 RS03 & Não priorização dos requisitos & Analisar as dependências dos requisitos e priorizar os que há menos dependência & Baixo\\ \midrule
 RS04 & Má elicitação dos requisitos & Refazer o requisito e todas as partes que o mesmo está envolvido & Alto \\ \midrule
 RS05 & Falta de comunicação da equipe & Reunir para alinhar a equipe & Médio \\ \midrule
@@ -655,9 +679,112 @@ Será necessário replanejar o projeto caso algumas dessas situações venha aco
     \item Algum integrante ficar impossibilitado de colaborar com o projeto;
     \item Caso o professor considere inadequado o tema;
     \item Caso os requisitos não sejam suficientes para aplicar o conteúdo da unidade curricular.
+    \item Caso a tecnologia escolhida torne-se inadequada ao desenvolvimento do projeto.
 \end{itemize}
 
+\chapter{Itens dos \textit{Backlogs} SAFe}
+Os itens dos \textit{backlogs} foram construídos usando-se a estrutura de requisitos sugerida pelo \foreignlanguage{english}{\textit{Scaled Agile Framework}} (SAFe) em \cite{safe_requirements_model}, temas estratégicos, requisitos não funcionais, épicos, \textit{features} e histórias de usuário.
 
+\section{Temas Estratégicos}
+Os temas estratégicos, presentes na tabela \ref{tab:temas_estratégicos}, são responsáveis por estabelecer a perspectiva de negócio e dirigir os épicos que serão gerados no nível de Portfólio.
+
+\begin{table}[ht]
+\IBGEtab{%
+\caption{Temas estratégicos}%
+\label{tab:temas_estratégicos}%
+}{%
+\begin{tabular}{@{}ll@{}}
+\toprule
+Temas de investimentos & Descrição \\ \midrule
+IT01 & Entregar ao usuário o controle de suas anotações \\ \bottomrule
+\end{tabular}%
+}{%\fonte{}%
+}
+\end{table}
+
+\section{Épicos}
+Os épicos descritos na tabela \ref{tab:epicos} estão presentes no \foreignlanguage{english}{\textit{backlog}} do Portfólio, definindo o mínimo produto viável.
+
+\begin{table}[ht]
+\IBGEtab{%
+\caption{Épicos}%
+\label{tab:epicos}%
+}{%
+\begin{tabular}{@{}ll@{}}
+\toprule
+Épicos & Descrição \\ \midrule
+EP01 & Permitir que usuário crie anotações, exporte notas e atribua etiquetas \\ \bottomrule
+\end{tabular}%
+}{%\fonte{}%
+}
+\end{table}
+
+\section{\textit{Features}}
+As \foreignlanguage{english}{\textit{features}}, presentes na tabela \ref{tab:features}, estão atreladas a um épico e estão localizadas nos \foreignlanguage{english}{\textit{backlogs}} da solução e de programa. Como o projeto não será grande o suficiente, decidiu-se remover o nível de solução.
+
+\begin{table}[htb]
+\IBGEtab{%
+\caption{\textit{Features}}%
+\label{tab:features}%
+}{%
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Épicos} & \textbf{Features} & \textbf{Descrição} \\ \midrule
+EP01 & FT01 & Serviço de backup em nuvem \\ \midrule
+EP01 & FT02 & Serviço de backup local \\ \midrule
+EP01 & FT03 & Gerência de anotações \\ \midrule
+EP01 & FT04 & Inclusão de ferramentas básicas de gestão de tempo \\ \bottomrule
+\end{tabular}%
+}{%\fonte{}%
+}
+\end{table}
+
+\section{Histórias do usuário}
+As histórias de usuário (tabela \ref{tab:historias_de_usuario}) são derivadas a partir das \foreignlanguage{english}{\textit{features}} e estão presentes nos \foreignlanguage{english}{\textit{backlogs}} da equipe, de onde são retirados para serem colocados nos quadros \textit{kanban} de cada equipe ágil.
+
+\IBGEtabfontsize
+\begin{longtable}{@{}p{0.1\textwidth}p{0.05\textwidth}p{0.29\textwidth}p{0.49\textwidth}@{}}
+\caption{Histórias de usuário}
+\label{tab:historias_de_usuario} \\
+\toprule
+\textbf{Feature} & \textbf{ID} & \textbf{Nome} & \textbf{Descrição} \\ \midrule
+FT01 & US10 & Criar conta & Eu como usuário desejo criar conta para utilizar o armazenamento remoto \\ \midrule
+FT01 & US11 & Configurar preferências de armazenamento e backup & Eu como usuário desejo configurar preferências de armazenamento e backup para salvar minhas anotações remotamente e localmente ou apenas localmente \\ \midrule
+FT01 & US12 & Sincronizar anotações locais com armazenamento remoto (nuvem) & Eu como usuário desejo sincronizar anotações locais com armazenamento remoto (nuvem) para não perder minhas anotações em caso de roubo \\ \midrule
+FT02 & US09 & Exportar anotações em armazenamento local em texto puro & Eu como usuário desejo exportar anotações em armazenamento local em texto puro para compartilhar por outras plataformas a cópia das anotações \\ \midrule
+FT02 & US20 & Exportar anotações locais em JSON & Eu como usuário desejo exportar anotações locais no formato JSON para que seja utilizada em outras aplicações \\ \midrule
+FT03 & US01 & Criar anotações & Eu como usuário desejo criar anotações para lembrar de conteúdos que me interessem \\ \midrule
+FT03 & US02 & Salvar anotações & Eu como usuário desejo salvar anotações para poder consultar seus conteúdos posteriormente \\ \midrule
+FT03 & US03 & Visualizar anotações & Eu como usuário desejo visualizar anotações para visualizar os lembretes que já foram criados \\ \midrule
+FT03 & US04 & Editar anotações & Eu como usuário desejo editar anotações para que possa alterar seus conteúdos sem que seja necessário reescrevê-los completamente \\ \midrule
+FT03]& US05 & Deletar anotações & Eu como usuário desejo deletar anotações para remover conteúdos que não são mais necessários \\ \midrule
+FT03 & US06 & Etiquetar anotações & Eu como usuário desejo etiquetar anotações para organizá-las \\ \midrule
+FT03 & US07 & Consultar anotações por etiquetas & Eu como usuário desejo consultar anotações por etiquetas para visualizar apenas as anotações com as etiquetadas selecionadas \\ \midrule
+FT03 & US13 & Criar anotações do tipo lista & Eu como usuário desejo criar anotações do tipo lista para organizar mais facilmente minhas tarefas e saber quais restam ser feitas \\ \midrule
+FT03 & US14 & Consultar anotações por conteúdo & Eu como usuário desejo consultar anotações por conteúdo para facilmente acessar algo que preciso lembrar \\ \midrule
+FT03 & US15 & Arquivar anotações & Eu como usuário desejo arquivar anotações para não deixar visível sem exclui-la \\ \midrule
+FT03 & US17 & Habilitar colaboração em anotações & Eu como usuário desejo habilitar colaboração em anotações para poder ter a colaboração de outros usuários nas minhas anotações \\ \midrule
+FT03 & US18 & Compartilhar anotações com outros aplicativos em formato texto & Eu como usuário desejo compartilhar anotações em formato texto para pode utilizar em outros aplicativos \\ \midrule
+FT03 & US21 & Relatório do tempo de execução de tarefas e notas temporizadas & Eu como usuário desejo criar relatório do tempo de execução de tarefas e anotações temporizadas para poder visualizar o tempo gasto \\ \midrule
+FT04 & US08 & Verificar tempo de duração de uma anotação & Eu como usuário desejo verificar o tempo de duração de uma anotação para visualizar o tempo de inicio e fim anotação \\ \midrule
+FT04 & US16 & Configurar alarmes & Eu como usuário desejo configurar lembretes nas anotações para poder ser alertado por eles \\ \midrule
+FT04 & US19 & Cronometrar tempo de execução de tarefas em listas & Eu como usuário desejo cronometrar tempo de execução de tarefas listadas em uma anotação para saber o tempo gasto \\ \bottomrule
+\end{longtable}
+
+\section{Requisitos não funcionais}
+\begin{table}[ht]
+\IBGEtab{%
+\caption{Requisitos não funcionais}%
+\label{tab:requisitos_nao_funcionais}%
+}{%
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{ID} & \textbf{Descrição} \\ \midrule
+NFR01 & Compatibilidade com Android 7 a 11 \\ \bottomrule
+\end{tabular}%
+}{%\fonte{}%
+}
+\end{table}
 
 % \chapter{Lições Aprendidas}
 %[Liste as lições aprendidas na retrospectiva, com ênfase especial nas ações a serem tomadas para melhorar, por exemplo: o ambiente de desenvolvimento, o processo ou a colaboração da equipe.]
