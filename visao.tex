@@ -148,7 +148,7 @@
 \titulo{NotoriousNote \\ \huge{Visão do Projeto}}
 \autor{Equipe EmptyCoffeeCups \\ Davi Antônio da Silva Santos \and Marcos Adriano \and Jonathan Jorge Barbosa Oliveira \and Wellington Jonathan}
 \local{Brasília, Distrito Federal, Brasil}
-\data{2021, v2021.03.11}
+\data{2021, v2021.03.25-preview}
 \instituicao{%
   Universidade de Brasília -- UnB
   \par
@@ -324,7 +324,7 @@
 \textbf{Data} & \textbf{Versão} & \textbf{Descrição} & \textbf{Autor} \\ \midrule
 18/02/2021 & 2021.02.18 & Versão inicial & Equipe EmptyCoffeCups \\ \hline
 09/03/2021 & 2021.03.11 & \begin{tabular}{@{}p{0.5\textwidth}@{}}Renomear projeto de Notório para NotoriousNote\\Remoção do excesso de páginas em branco\\Modificação da declaração do problema\\Modificação dos objetivos de projeto, aumentando o escopo deste\\Modificação no escopo do MVP\\Acreéscimo do professor na organização do projeto\\Remoção do prazo estimado nas ferramentas de hardware e software\\Clarificação da escalabilidade dos problemas\\Adequação da matriz de comunicação às práticas do projeto\\Acréscimo dos itens dos \textit{backlogs} \\ Atualizar versões das ferramentas de software \end{tabular} & Equipe EmptyCoffeCups \\ \midrule
- &  &  &  \\ \midrule
+25/03/2021 & 2021.03.25-preview & \begin{tabular}{@{}p{0.5\textwidth}@{}}Remover US02 e US17\\Mudar descrição da US08, US09, US13, US18, US20 e US21\\Estabelecer pontos para as histórias de usuário normalizados a partir de US01\\Remover funcionalidade de exportar notas em texto puro e requisito não funcional de suporte a APIs Android do MVP\\Remover funcionalidade FT02\\Mudar título da US07 e US13\\Mudar título das funcionalidades FT01 e FT04\\Especificar APIs do Android suportadas no NFR01 \end{tabular} & Equipe EmptyCoffeCups \\ \midrule
  &  &  &  \\ \bottomrule
 \end{tabular}%
 }{%\fonte{}%
@@ -475,11 +475,11 @@ Usuário & Pessoas que utilizarão o aplicativo & \makecell[c{p{0.5\textwidth}}]
 \section{Mínimo Produto Viável (MVP)}
 %[Forneça uma lista de características mínimas que o produto deve possuir para que possa ser lançado]
 \begin{itemize}
-    \item Aplicação deve ser executável em sistemas operacionais móveis Android com suporte as APIs 24 a 30;
+    % \item Aplicação deve ser executável em sistemas operacionais móveis Android com suporte as APIs 24 a 30;
     \item Criar, apagar, editar e visualizar de notas de texto com título e conteúdo;
     \item Criar, apagar, editar e visualizar etiquetas;
     \item Atribuir etiquetas a uma anotação;
-    \item Exportar notas e listas de tarefas em texto puro;
+    % \item Exportar notas e listas de tarefas em texto puro;
     \item Visualizar notas por etiquetas específicas.
     % \item Criação de listas de tarefa com título e tarefas que podem ser registradas como terminadas ou não;
     % \item Capacidade de salvar notas e listas de tarefa em nuvem (Cloud Firestore);
@@ -730,8 +730,7 @@ As \foreignlanguage{english}{\textit{features}}, presentes na tabela \ref{tab:fe
 \begin{tabular}{@{}lll@{}}
 \toprule
 \textbf{Épicos} & \textbf{Features} & \textbf{Descrição} \\ \midrule
-EP01 & FT01 & Serviço de backup em nuvem \\ \midrule
-EP01 & FT02 & Serviço de backup local \\ \midrule
+EP01 & FT01 & Gerência de backup \\ \midrule
 EP01 & FT03 & Gerência de anotações \\ \midrule
 EP01 & FT04 & Inclusão de ferramentas básicas de gestão de tempo \\ \bottomrule
 \end{tabular}%
@@ -740,7 +739,7 @@ EP01 & FT04 & Inclusão de ferramentas básicas de gestão de tempo \\ \bottomru
 \end{table}
 
 \section{Histórias do usuário}
-As histórias de usuário (tabela \ref{tab:historias_de_usuario}) são derivadas a partir das \foreignlanguage{english}{\textit{features}} e estão presentes nos \foreignlanguage{english}{\textit{backlogs}} da equipe, de onde são retirados para serem colocados nos quadros \textit{kanban} de cada equipe ágil.
+As histórias de usuário (tabela \ref{tab:historias_de_usuario}) são derivadas a partir das \foreignlanguage{english}{\textit{features}} e estão presentes nos \foreignlanguage{english}{\textit{backlogs}} da equipe, de onde são retirados para serem colocados nos quadros \textit{kanban} de cada equipe ágil. Nessa tabela, a coluna ID especifica a identificação única de cada história de usuário e sua pontuação de dificuldade normalizada em relação à US01 seguindo a sequência de Fibonacci.
 
 \IBGEtabfontsize
 \begin{longtable}{@{}p{0.1\textwidth}p{0.05\textwidth}p{0.29\textwidth}p{0.49\textwidth}@{}}
@@ -748,27 +747,27 @@ As histórias de usuário (tabela \ref{tab:historias_de_usuario}) são derivadas
 \label{tab:historias_de_usuario} \\
 \toprule
 \textbf{Feature} & \textbf{ID} & \textbf{Nome} & \textbf{Descrição} \\ \midrule
-FT01 & US10 & Criar conta & Eu como usuário desejo criar conta para utilizar o armazenamento remoto \\ \midrule
-FT01 & US11 & Configurar preferências de armazenamento e backup & Eu como usuário desejo configurar preferências de armazenamento e backup para salvar minhas anotações remotamente e localmente ou apenas localmente \\ \midrule
-FT01 & US12 & Sincronizar anotações locais com armazenamento remoto (nuvem) & Eu como usuário desejo sincronizar anotações locais com armazenamento remoto (nuvem) para não perder minhas anotações em caso de roubo \\ \midrule
-FT02 & US09 & Exportar anotações em armazenamento local em texto puro & Eu como usuário desejo exportar anotações em armazenamento local em texto puro para compartilhar por outras plataformas a cópia das anotações \\ \midrule
-FT02 & US20 & Exportar anotações locais em JSON & Eu como usuário desejo exportar anotações locais no formato JSON para que seja utilizada em outras aplicações \\ \midrule
-FT03 & US01 & Criar anotações & Eu como usuário desejo criar anotações para lembrar de conteúdos que me interessem \\ \midrule
-FT03 & US02 & Salvar anotações & Eu como usuário desejo salvar anotações para poder consultar seus conteúdos posteriormente \\ \midrule
-FT03 & US03 & Visualizar anotações & Eu como usuário desejo visualizar anotações para visualizar os lembretes que já foram criados \\ \midrule
-FT03 & US04 & Editar anotações & Eu como usuário desejo editar anotações para que possa alterar seus conteúdos sem que seja necessário reescrevê-los completamente \\ \midrule
-FT03]& US05 & Deletar anotações & Eu como usuário desejo deletar anotações para remover conteúdos que não são mais necessários \\ \midrule
-FT03 & US06 & Etiquetar anotações & Eu como usuário desejo etiquetar anotações para organizá-las \\ \midrule
-FT03 & US07 & Consultar anotações por etiquetas & Eu como usuário desejo consultar anotações por etiquetas para visualizar apenas as anotações com as etiquetadas selecionadas \\ \midrule
-FT03 & US13 & Criar anotações do tipo lista & Eu como usuário desejo criar anotações do tipo lista para organizar mais facilmente minhas tarefas e saber quais restam ser feitas \\ \midrule
-FT03 & US14 & Consultar anotações por conteúdo & Eu como usuário desejo consultar anotações por conteúdo para facilmente acessar algo que preciso lembrar \\ \midrule
-FT03 & US15 & Arquivar anotações & Eu como usuário desejo arquivar anotações para não deixar visível sem exclui-la \\ \midrule
-FT03 & US17 & Habilitar colaboração em anotações & Eu como usuário desejo habilitar colaboração em anotações para poder ter a colaboração de outros usuários nas minhas anotações \\ \midrule
-FT03 & US18 & Compartilhar anotações com outros aplicativos em formato texto & Eu como usuário desejo compartilhar anotações em formato texto para pode utilizar em outros aplicativos \\ \midrule
-FT03 & US21 & Relatório do tempo de execução de tarefas e notas temporizadas & Eu como usuário desejo criar relatório do tempo de execução de tarefas e anotações temporizadas para poder visualizar o tempo gasto \\ \midrule
-FT04 & US08 & Verificar tempo de duração de uma anotação & Eu como usuário desejo verificar o tempo de duração de uma anotação para visualizar o tempo de inicio e fim anotação \\ \midrule
-FT04 & US16 & Configurar alarmes & Eu como usuário desejo configurar lembretes nas anotações para poder ser alertado por eles \\ \midrule
-FT04 & US19 & Cronometrar tempo de execução de tarefas em listas & Eu como usuário desejo cronometrar tempo de execução de tarefas listadas em uma anotação para saber o tempo gasto \\ \bottomrule
+FT01 & US10 (2) & Criar conta & Eu como usuário desejo criar conta para utilizar o armazenamento remoto \\ \midrule
+FT01 & US11 (8) & Configurar preferências de armazenamento e backup & Eu como usuário desejo configurar preferências de armazenamento e backup para salvar minhas anotações remotamente e localmente ou apenas localmente \\ \midrule
+FT01 & US12 (13) & Sincronizar anotações locais com armazenamento remoto (nuvem) & Eu como usuário desejo sincronizar anotações locais com armazenamento remoto (nuvem) para não perder minhas anotações em caso de roubo \\ \midrule
+FT01 & US09 (5) & Exportar anotações em armazenamento local & Eu como usuário desejo exportar anotações em armazenamento local para compartilhar por outras aplicações ou manter uma cópia de segurança \\ \midrule
+FT01 & US20 (8) & Restaurar anotações a partir de arquivo de backup & Eu como usuário desejo recuperar anotações a partir de um arquivo de backup para que não seja necessário reescrevê-las manualmente \\ \midrule
+FT03 & US01 (1*) & Criar anotações & Eu como usuário desejo criar anotações para lembrar de conteúdos que me interessem \\ \midrule
+% FT03 & US02 (3) & Salvar anotações & Eu como usuário desejo salvar anotações para poder consultar seus conteúdos posteriormente \\ \midrule
+FT03 & US03 (1) & Visualizar anotações & Eu como usuário desejo visualizar anotações para visualizar o que já foi criado \\ \midrule
+FT03 & US04 (2) & Editar anotações & Eu como usuário desejo editar anotações para que possa alterar seus conteúdos sem que seja necessário reescrevê-los completamente \\ \midrule
+FT03]& US05 (2) & Deletar anotações & Eu como usuário desejo deletar anotações para remover conteúdos que não são mais necessários \\ \midrule
+FT03 & US06 (3) & Etiquetar anotações & Eu como usuário desejo etiquetar anotações para organizá-las \\ \midrule
+FT03 & US07 (3) & Agrupar anotações por etiquetas & Eu como usuário desejo agrupar anotações por etiquetas para visualizar apenas as anotações com as etiquetadas selecionadas \\ \midrule
+FT03 & US13 (8) & Criar listas de tarefas & Eu como usuário desejo criar listas de tarefas para organizar mais facilmente minhas tarefas e saber quais restam ser feitas \\ \midrule
+FT03 & US14 (8) & Consultar anotações & Eu como usuário desejo consultar anotações por conteúdo para facilmente acessar algo que preciso lembrar \\ \midrule
+FT03 & US15 (5) & Arquivar anotações & Eu como usuário desejo arquivar anotações para não deixar visível sem exclui-la \\ \midrule
+% FT03 & US17 & Habilitar colaboração em anotações & Eu como usuário desejo habilitar colaboração em anotações para poder ter a colaboração de outros usuários nas minhas anotações \\ \midrule
+FT03 & US18 (8) & Compartilhar anotações com outros aplicativos & Eu como usuário desejo compartilhar anotações para pode utilizar em outros aplicativos \\ \midrule
+FT03 & US21 (21) & Relatório do tempo de execução de tarefas e notas temporizadas & Eu como usuário desejo criar relatório do tempo de execução de tarefas e anotações temporizadas para poder visualizar o tempo gasto \\ \midrule
+FT04 & US08 (5) & Verificar tempo de duração de uma anotação & Eu como usuário desejo que seja possível especificar a data de término de um lembrete para a anotação especificada usando tempo relativo ao início para que não seja necessário especificar tempo absoluto na data de término \\ \midrule
+FT04 & US16 (21) & Configurar alarmes & Eu como usuário desejo configurar lembretes nas anotações para poder ser alertado por eles \\ \midrule
+FT04 & US19 (8) & Cronometrar tempo de execução de tarefas em listas & Eu como usuário desejo cronometrar tempo de execução de tarefas listadas em uma anotação para saber o tempo gasto \\ \bottomrule
 \end{longtable}
 
 \section{Requisitos não funcionais}
@@ -780,7 +779,7 @@ FT04 & US19 & Cronometrar tempo de execução de tarefas em listas & Eu como usu
 \begin{tabular}{@{}ll@{}}
 \toprule
 \textbf{ID} & \textbf{Descrição} \\ \midrule
-NFR01 & Compatibilidade com Android 7 a 11 \\ \bottomrule
+NFR01 & Compatibilidade com Android 7 a 11 (APIs 24 a 30) \\ \bottomrule
 \end{tabular}%
 }{%\fonte{}%
 }
