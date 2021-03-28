@@ -148,7 +148,7 @@
 \titulo{NotoriousNote \\ \huge{Visão do Projeto}}
 \autor{Equipe EmptyCoffeeCups \\ Davi Antônio da Silva Santos \and Marcos Adriano \and Jonathan Jorge Barbosa Oliveira \and Wellington Jonathan}
 \local{Brasília, Distrito Federal, Brasil}
-\data{2021, v2021.03.25-preview}
+\data{2021, v2021.03.27-preview}
 \instituicao{%
   Universidade de Brasília -- UnB
   \par
@@ -316,20 +316,18 @@
 % Histórico de revisão
 \chapter*[Histórico de Revisões]{Histórico de Revisões}
 
-\begin{table}[ht]
-\IBGEtab{%\caption{}\label{}%
-}{%
-\begin{tabular}{@{}p{0.1\textwidth}p{0.1\textwidth}p{0.5\textwidth}p{0.2\textwidth}@{}}
+\IBGEtabfontsize
+\begin{longtable}{@{}p{0.1\textwidth}p{0.1\textwidth}p{0.5\textwidth}p{0.2\textwidth}@{}}
+%\caption{}
+%\label{} \\
 \toprule
-\textbf{Data} & \textbf{Versão} & \textbf{Descrição} & \textbf{Autor} \\ \midrule
+\textbf{Data} & \textbf{Versão} & \textbf{Descrição} & \textbf{Autor} \\ \midrule \endhead
 18/02/2021 & 2021.02.18 & Versão inicial & Equipe EmptyCoffeCups \\ \hline
 09/03/2021 & 2021.03.11 & \begin{tabular}{@{}p{0.5\textwidth}@{}}Renomear projeto de Notório para NotoriousNote\\Remoção do excesso de páginas em branco\\Modificação da declaração do problema\\Modificação dos objetivos de projeto, aumentando o escopo deste\\Modificação no escopo do MVP\\Acreéscimo do professor na organização do projeto\\Remoção do prazo estimado nas ferramentas de hardware e software\\Clarificação da escalabilidade dos problemas\\Adequação da matriz de comunicação às práticas do projeto\\Acréscimo dos itens dos \textit{backlogs} \\ Atualizar versões das ferramentas de software \end{tabular} & Equipe EmptyCoffeCups \\ \midrule
 25/03/2021 & 2021.03.25-preview & \begin{tabular}{@{}p{0.5\textwidth}@{}}Remover US02 e US17\\Mudar descrição da US08, US09, US13, US18, US20 e US21\\Estabelecer pontos para as histórias de usuário normalizados a partir de US01\\Remover funcionalidade de exportar notas em texto puro e requisito não funcional de suporte a APIs Android do MVP\\Remover funcionalidade FT02\\Mudar título da US07 e US13\\Mudar título das funcionalidades FT01 e FT04\\Especificar APIs do Android suportadas no NFR01 \end{tabular} & Equipe EmptyCoffeCups \\ \midrule
- &  &  &  \\ \bottomrule
-\end{tabular}%
-}{%\fonte{}%
-}
-\end{table}
+27/03/2021 & 2021.03-27-preview & \begin{tabular}{@{}p{0.5\textwidth}@{}}Adicionar às dependências o pacote Flutter sqflite na versão \^{}2.0.0+3\\Atualizar Android Studio da versão 4.1.2 para 4.1.3\\Atualizar Flutter da versão 2.0.1 para 2.0.3\\Atualizar Dart da versão 2.12.0 para 2.12.2\\Atualizar Kotlin da versão 1.4.30 para 1.4.31\\Atualizar Gradle da versão 4.1.2 para 4.1.3\\Atualizar extensão do Android Studio Flutter da versão 54.0.1 para 54.1.1\\Atualizar extensão do Android Studio Kotlin da versão 1.4.30 para 1.4.31\\Atualizar dependência Android Firebase BoM da versão 26.5.0 para 26.6.0\\Atualizar pacote Flutter firebase\_auth da versão 0.20+1 para \^{}1.0.1\\Atualizar pacote Flutter firebase\_core da versão 0.7.0 para \^{}1.0.2\\Atualizar pacote Flutter cloud\_firestore da versão 0.16.0 para \^{}1.0.3\\Atualizar pacote Flutter provider da versão 4.3.3 para \^{}5.0.0\\Reorganizar ordem das dependências na tabela\\Configurar tabela do histórico de revisões para ser apresentada em múltiplas páginas\end{tabular} & Davi Antônio da Silva Santos\\ \midrule
+ & & & \\ \bottomrule
+\end{longtable}
 \cleardoublepage
 
 % ---
@@ -540,20 +538,21 @@ Desenvolvedor & Computador & \makecell[c{p{0.27\textwidth}}]{Interface USB \\ M�
 \toprule
 \textbf{Perfil} & \textbf{Tipo} & \textbf{Nome} & \textbf{Versão} & \textbf{Licenças}  & \textbf{Observação} \\ \midrule
 Todos & Controle de Versão & Git & 2.25.1 ou superior & 04  & - \\ \midrule
-Todos & IDE & Android Studio & 4.1.2 & 04  & - \\ \midrule
-Todos & SDK & Flutter & 2.0.1 & 04  & - \\ \midrule
-Todos & Linguagem de programação & Dart & 2.12.0 & 04  & - \\ \midrule
-Todos & Linguagem de programação & Kotlin & 1.4.30 & 04  & - \\ \midrule
+Todos & IDE & Android Studio & 4.1.3 & 04  & - \\ \midrule
+Todos & SDK & Flutter & 2.0.3 & 04  & - \\ \midrule
+Todos & Linguagem de programação & Dart & 2.12.2 & 04  & - \\ \midrule
+Todos & Linguagem de programação & Kotlin & 1.4.31 & 04  & - \\ \midrule
 Todos & Extensão do Android Studio & Dart & 201.9335 & 04  & - \\ \midrule
-Todos & Extensão do Android Studio & Flutter & 54.0.1 & 04  & - \\ \midrule
+Todos & Extensão do Android Studio & Flutter & 54.1.1 & 04  & - \\ \midrule
 Todos & Extensão do Android Studio & Kotlin & 1.4.31-release-Studio4.1-1 & 04  & - \\ \midrule
-Todos & Pacote Flutter & firebase\_core & 0.7.0 & 04 & - \\ \midrule
-Todos & Pacote Flutter & firebase\_auth & 0.20.0+1 & 04  & - \\ \midrule
-Todos & Pacote Flutter & provider & 4.3.3 & 04 & - \\ \midrule
-Todos & Pacote Flutter & cloud\_firestore & 0.16.0 & 04  & - \\ \midrule
+Todos & Pacote Flutter & provider & \^{}5.0.0 & 04 & - \\ \midrule
+Todos & Pacote Flutter & sqflite & \^{}2.0.0+3 & 04 & - \\ \midrule
+Todos & Pacote Flutter & firebase\_core & \^{}1.0.2 & 04 & - \\ \midrule
+Todos & Pacote Flutter & firebase\_auth & \^{}1.0.1 & 04  & - \\ \midrule
+Todos & Pacote Flutter & cloud\_firestore & \^{}1.0.3 & 04  & - \\ \midrule
 Todos & Dependência Android & google-services & 4.3.5 & 04  & - \\ \midrule
-Todos & Dependência Android & firebase-bom & 26.5.0 & 04  & - \\ \midrule
-Todos & Ferramenta de compilação & gradle & 4.1.2 & 04  & - \\ \bottomrule
+Todos & Dependência Android & firebase-bom & 26.6.0 & 04  & - \\ \midrule
+Todos & Ferramenta de compilação & gradle & 4.1.3 & 04  & - \\ \bottomrule
 \end{tabular}%
 \end{table}
 
