@@ -148,7 +148,7 @@
 \titulo{NotoriousNote \\ \huge{Visão do Projeto}}
 \autor{Equipe EmptyCoffeeCups \\ Davi Antônio da Silva Santos \and Marcos Adriano \and Jonathan Jorge Barbosa Oliveira \and Wellington Jonathan}
 \local{Brasília, Distrito Federal, Brasil}
-\data{2021, v2021.04.01}
+\data{2021, v22021.04.15-preview}
 \instituicao{%
   Universidade de Brasília -- UnB
   \par
@@ -327,6 +327,7 @@
 25/03/2021 & 2021.03.25-preview & \begin{tabular}{@{}p{0.6\textwidth}@{}}Remover US02 e US17\\Mudar descrição da US08, US09, US13, US18, US20 e US21\\Estabelecer pontos para as histórias de usuário normalizados a partir de US01\\Remover funcionalidade de exportar notas em texto puro e requisito não funcional de suporte a APIs Android do MVP\\Remover funcionalidade FT02\\Mudar título da US07 e US13\\Mudar título das funcionalidades FT01 e FT04\\Especificar APIs do Android suportadas no NFR01 \end{tabular} & Equipe EmptyCoffeCups \\ \midrule
 27/03/2021 & 2021.03-27-preview & \begin{tabular}{@{}p{0.6\textwidth}@{}}Adicionar às dependências o pacote Flutter sqflite na versão \^{}2.0.0+3\\Atualizar Android Studio da versão 4.1.2 para 4.1.3\\Atualizar Flutter da versão 2.0.1 para 2.0.3\\Atualizar Dart da versão 2.12.0 para 2.12.2\\Atualizar Kotlin da versão 1.4.30 para 1.4.31\\Atualizar Gradle da versão 4.1.2 para 4.1.3\\Atualizar extensão do Android Studio Flutter da versão 54.0.1 para 54.1.1\\Atualizar extensão do Android Studio Kotlin da versão 1.4.30 para 1.4.31\\Atualizar dependência Android Firebase BoM da versão 26.5.0 para 26.6.0\\Atualizar pacote Flutter firebase\_auth da versão 0.20+1 para \^{}1.0.1\\Atualizar pacote Flutter firebase\_core da versão 0.7.0 para \^{}1.0.2\\Atualizar pacote Flutter cloud\_firestore da versão 0.16.0 para \^{}1.0.3\\Atualizar pacote Flutter provider da versão 4.3.3 para \^{}5.0.0\\Reorganizar ordem das dependências na tabela\\Configurar tabela do histórico de revisões para ser apresentada em múltiplas páginas\end{tabular} & Davi Antônio da Silva Santos\\ \midrule
 01/04/2021 & 2021.04.01 & \begin{tabular}{@{}p{0.6\textwidth}@{}}Atualizar dependência Android Firebase BoM da versão 26.6.0 para 26.8.0\\Separar objetivos do projeto em primários e secundários\\Substituir temas de investimento por temas estratégicos (SAFe 5.0)\\Mudar sigla dos temas estratégicos de IT para ST\\Atualizar descrição do tema estratégico ST01 (IT01)\\Atualizar descrição do épico EP01\\Alterar descrição da funcionalidade FT05\\Retirar geração de APK da \textit{sprint} 2 no cronograma, pois não aconteceu\\Substituir configuração do Firebase para configuração do ambiente e movê-la da \textit{sprint} 2 para a  3\\Especificar que o APK gerado na \textit{sprint} 3 apenas testa a configuração do ambiente\\Melhorar a clareza na descrição do problema\\Priorização das histórias com MoSCoW\\Correção de erros gramaticais na descrição das histórias\\Ajustes de leiaute no documento\\Criar, pontuar e priorizar histórias US22, US23, US24 e US25\end{tabular} & Equipe EmptyCoffeCups \\ \midrule
+15/04/2021 & 2021.04.15-preview & \begin{tabular}{@{}p{0.6\textwidth}@{}}Atualizar Flutter da versão 2.0.3 para 2.0.4\\Atualizar extensão do Android Studio Flutter da versão 54.1.1 para 55.1.1\\Atualizar extensão do Android Studio Kotlin da versão 1.4.31 para 1.4.32\\Separação do trabalho em abordagem ágil e tradicional \\ Escrita das necessidades \\ Elicitação dos requisitos funcionais \end{tabular} & Equipe EmptyCoffeCups \\ \midrule
  & & & \\ \bottomrule
 \end{longtable}
 \cleardoublepage
@@ -542,11 +543,11 @@ Desenvolvedor & Computador & \makecell[c{p{0.27\textwidth}}]{Interface USB \\ M�
 \textbf{Perfil} & \textbf{Tipo} & \textbf{Nome} & \textbf{Versão} & \textbf{Licenças}  & \textbf{Observação} \\ \midrule
 Todos & Controle de Versão & Git & 2.25.1 ou superior & 04  & - \\ \midrule
 Todos & IDE & Android Studio & 4.1.3 & 04  & - \\ \midrule
-Todos & SDK & Flutter & 2.0.3 & 04  & - \\ \midrule
+Todos & SDK & Flutter & 2.0.4 & 04  & - \\ \midrule
 Todos & Linguagem de programação & Dart & 2.12.2 & 04  & - \\ \midrule
-Todos & Linguagem de programação & Kotlin & 1.4.31 & 04  & - \\ \midrule
+Todos & Linguagem de programação & Kotlin & 1.4.32 & 04  & - \\ \midrule
 Todos & Extensão do Android Studio & Dart & 201.9335 & 04  & - \\ \midrule
-Todos & Extensão do Android Studio & Flutter & 54.1.1 & 04  & - \\ \midrule
+Todos & Extensão do Android Studio & Flutter & 55.1.1 & 04  & - \\ \midrule
 Todos & Extensão do Android Studio & Kotlin & 1.4.31-release-Studio4.1-1 & 04  & - \\ \midrule
 Todos & Pacote Flutter & provider & \^{}5.0.0 & 04 & - \\ \midrule
 Todos & Pacote Flutter & sqflite & \^{}2.0.0+3 & 04 & - \\ \midrule
@@ -684,6 +685,8 @@ Será necessário replanejar o projeto caso algumas dessas situações venha aco
     \item Caso a tecnologia escolhida torne-se inadequada ao desenvolvimento do projeto.
 \end{itemize}
 
+\part{Processo Ágil}
+
 \chapter{Itens dos \textit{Backlogs} SAFe}
 Os itens dos \textit{backlogs} foram construídos usando-se a estrutura de requisitos sugerida pelo \foreignlanguage{english}{\textit{Scaled Agile Framework}} (SAFe) em \cite{safe_requirements_model}, temas estratégicos, requisitos não funcionais, épicos, \textit{features} e histórias de usuário.
 
@@ -792,6 +795,68 @@ NFR01 & Compatibilidade com Android 7 a 11 (APIs 24 a 30) \\ \bottomrule
 }{%\fonte{}%
 }
 \end{table}
+
+\part{Abordagem Tradicional - Processo Unificado }
+
+
+
+\chapter{Necessidades}
+
+registrar
+lembrar
+cronometrar
+tempo gasto
+
+\IBGEtabfontsize
+\begin{longtable}{@{}p{0.05\textwidth}p{0.2\textwidth}p{0.05\textwidth}p{0.2\textwidth}p{0.2\textwidth}p{0.2\textwidth}@{}}
+\caption{Necessidades}
+\label{tab:requisitos} \\
+\toprule
+\textbf{Id.} & \textbf{Necessidade} & \textbf{Prioridade} & \textbf{Problema} & \textbf{Solução Atual} & \textbf{Solução Proposta} \\ \midrule
+N1 & Gerenciar anotações & Alta & Dificuldade em organizar múltiplos compromissos de forma eficiente & Gerenciamento dos compromissos em blocos adesivos ou agenda física & Digitalização do processo de registro e gestão das anotações \\ \midrule
+N2 & Cópia de segurança das anotações & Média & Ter acesso às anotações sempre que precisar, mesmo em caso de roubos e perdas & Não é realizado backup das anotações & Digitalizar as anotações possibilitará a cópia eficiente das anotações \\ \midrule
+N3 &Lembrar compromissos & Média & Recordar dos compromissos de forma simples e eficiente & A lembrança dos compromissos é feita analisando a agenda e anotações periodicamente & Elaboração de um sistema que alerta o usuário dos seus lembretes \\ \bottomrule
+\end{longtable}
+
+\chapter{Requisitos funcionais}
+\IBGEtabfontsize
+\begin{longtable}{@{}p{0.05\textwidth}p{0.95\textwidth}@{}}
+\caption{Requisitos}
+\label{tab:requisitos} \\
+\toprule
+\textbf{Id.} & \textbf{Descrição} \\ \midrule
+RF1 & Para criar uma anotação o usuário deve sinalizar que quer criá-la e fornecer um título ou um conteúdo \\ \midrule
+RF2 & Para ler anotações é necessário que existam anotações criadas \\ \midrule
+RF3 & Ao modificar anotação o usuário deve selecionar uma anotação criada e alterar o campo do título ou conteúdo   \\ \midrule
+RF4 & Para apagar anotações o usuário deve selecionar uma anotação existente e confirmar que deseja apagá-la. \\ \midrule
+
+RF5 & Para criar etiquetas o usuário deve sinalizar que quer criá-la e fornecer um nome. \\ \midrule
+RF6 & Para ler etiquetas o usuário deve selecionar uma etiqueta existente \\ \midrule
+RF7 & Para modificar etiquetas o usuário deve selecionar uma etiqueta que já exista e modificar o seu conteúdo \\ \midrule
+RF8 & Para apagar etiquetas deve ser selecionada, pelo usuário, uma etiqueta existente, e essa ação de apagar deve ser confirmada para que se realize \\ \midrule
+RF9 & Para atribuir etiquetas o usuário deve selecionar uma anotação e uma etiqueta existente \\ \midrule
+
+RF10 & Para realizar uma cópia de segurança na nuvem o usuário deve acessar uma conta já existente, caso não tiver é necessário criar uma nova conta  \\ \midrule
+
+RF11 & Após ter criado a conta o usuário deve confirmar seu e-mail para que sua conta seja validada\\ \midrule
+
+RF12 & Para criar uma lista de tarefas o usuário deve sinalizar que quer criá-la e fornecer um título \\ \midrule
+RF13 & Para ler uma lista de tarefas é necessário que existam listas de tarefas criadas \\ \midrule
+RF14 & Para modificar uma lista de tarefas o usuário deve selecionar uma lista criada e alterar o campo do título \\ \midrule
+RF15 & Para apagar listas de tarefas o usuário deve selecionar uma existente e confirmar que deseja apagá-la \\ \midrule
+
+RF16 & Para criar uma tarefa o usuário deve sinalizar que quer criá-la e fornecer um conteúdo \\ \midrule
+RF17 & Para ler uma tarefa é necessário que esta exista \\ \midrule
+RF18 & Para modificar uma tarefa o usuário deve selecionar uma tarefa e alterar os campos de conteúdo ou de conclusão da tarefa \\ \midrule
+RF19 & Para apagar listas de tarefas o usuário deve selecionar uma existente e confirmar que deseja apagá-la \\ \midrule
+RF20 & O sistema deve encaminhar alerta quando um lembrete for acionado. \\ \midrule
+RF21 & Para um usuário criar um lembrete ele deve sinalizar que quer criá-lo e configurar os horários que deseja ser notificado\\ \midrule
+RF22 & O usuário pode cronometrar o tempo gasto para executar uma tarefa, que corresponde ao período de tempo entre a criação  e a marcação da tarefa como concluída \\ \midrule
+
+
+
+RFN & - \\ \bottomrule
+\end{longtable}
 
 % \chapter{Lições Aprendidas}
 %[Liste as lições aprendidas na retrospectiva, com ênfase especial nas ações a serem tomadas para melhorar, por exemplo: o ambiente de desenvolvimento, o processo ou a colaboração da equipe.]
