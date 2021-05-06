@@ -148,7 +148,7 @@
 \titulo{NotoriousNote \\ \huge{Visão do Projeto}}
 \autor{Equipe EmptyCoffeeCups \\ Davi Antônio da Silva Santos \and Marcos Adriano \and Jonathan Jorge Barbosa Oliveira \and Wellington Jonathan}
 \local{Brasília, Distrito Federal, Brasil}
-\data{2021, v2021.04.27}
+\data{2021, 2021.05.04-preview}
 \instituicao{%
   Universidade de Brasília -- UnB
   \par
@@ -330,6 +330,8 @@
 15/04/2021 & 2021.04.15-preview & \begin{tabular}{@{}p{0.6\textwidth}@{}}Atualizar Flutter da versão 2.0.3 para 2.0.4\\Atualizar extensão do Android Studio Flutter da versão 54.1.1 para 55.1.1\\Atualizar extensão do Android Studio Kotlin da versão 1.4.31 para 1.4.32\\Separação do trabalho em abordagem ágil e tradicional \\ Escrita das necessidades \\ Elicitação dos requisitos funcionais \end{tabular} & Equipe EmptyCoffeCups \\ \midrule
 19/04/2021 & 2021.04.19 & \begin{tabular}{@{}p{0.6\textwidth}@{}}Alterar descrição do RF21\\Criar tabelas de requisitos e casos de uso\\Adicionar diagrama de casos de uso do sistema\\Adicionar RF23\\Adicionar ferramenta de compilação Android SDK Build Tools na versão 30.0.3\\Criar lista de ilustrações\end{tabular} & Equipe EmptyCoffeCups \\ \midrule
 27/04/2021 & 2021.04.27 & \begin{tabular}{@{}p{0.6\textwidth}@{}}Corrigir corte na ilustração do diagrama de casos de uso \\ Adicionar requisitos RF24 e RF25\\Corrigir erros ortográficos\\Adicionar identificador para casos de uso e atores\\Criar tabela para atores\\Adicionar requisitos RF24 e RF25 ao caso de uso UC01\\Corrigir formatação de figuras e tabelas\\Modificar nomenclatura das partes do documento de visão e título do capítulo de requisitos tradicionais\end{tabular} & Equipe EmptyCoffeCups \\ \midrule
+03/05/2021 & 2021.05.03-preview & Início da descrição do UC01 & Equipe EmptyCoffeCups \\ \midrule
+04/05/2021 & 2021.05.04-preview & Descrição do UC01 e de seus fluxos alternativos & Equipe EmptyCoffeCups \\ \midrule
  & & & \\ \bottomrule
 \end{longtable}
 \cleardoublepage
@@ -891,6 +893,103 @@ A03 & Firebase Auth & Gerência de Conta \\ \bottomrule
     \caption{Diagrama de casos de uso do sistema}
     \label{fig:diagrama_casos_uso}
 \end{figure}
+
+\part{Especificação de casos de uso}
+
+\chapter{UC01 - Gerência de Anotações}
+
+\section{Descrição} 
+Caso de uso responsável por criar, ler, editar, excluir e arquivar anotações. O usuário interage com a tela principal da aplicação, que disponibiliza as possibilidades de gerência de anotações mencionadas previamente, e uma tela dedicada a edição da anotação.
+
+
+\section{Fluxo básico de eventos}
+
+
+\begin{enumerate}
+    \item O usuário inicia aplicação
+    \item O sistema carrega as anotações existentes
+    \item O usuário ao criar uma anotação preenche os campos título ou corpo.
+    \item O usuário salva a anotação
+    \item O sistema valida se os campos obrigatórios estão preenchidos
+    \item O sistema disponibiliza a anotação salva na tela inicial da aplicação
+    \item O usuário pode apagar a anotação
+    \item O usuário pode editar a anotação
+    \item O usuário pode ler as anotações
+    \item O usuário pode arquivas as anotações
+    
+\end{enumerate}
+
+\section{Fluxos alternativos}
+
+% Área de funcionalidade
+\subsection{Criação de anotações}
+% subfluxo
+\subsubsection{Criar anotação}
+\begin{enumerate}
+    \item O usuário aciona a opção de  criar a anotação
+    \item O sistema disponibiliza uma janela para criação da anotação
+    \item O usuário escreve nos campos de título e conteúdo da anotação
+    \item O usuário seleciona uma das etiquetas disponíveis na aplicação
+    \item O usuário seleciona a opção de salvar a anotação
+    \item A anotação é salva com o título, conteúdo e etiquetas selecionadas pelo usuário
+    \item Caso o título e o conteúdo sejam nulos ou vazios, a anotação não será salva e o sistema informará ao usuário sobre o erro
+    \item Sistema a janela de criação da anotação para ser preenchidos novamente.
+    \item Caso usuário deseje cancelar a criação da anotação ele pode selecionar o botão de sair  
+\end{enumerate}
+
+% Área de funcionalidade
+\subsection{Leitura de anotações}
+% subfluxo
+\subsubsection{Ler anotações}
+\begin{enumerate}
+    \item O usuário ao iniciar a aplicação terá disponível para leitura todas as anotações não excluídas ou arquivadas
+    \item Caso o usuário deseje visualizar as anotações arquivadas, deve selecionar uma tela específica
+\end{enumerate}
+
+% Área de funcionalidade
+\subsection{Edição de anotações}
+% subfluxo
+\subsubsection{Editar anotação}
+\begin{enumerate}
+    \item O usuário seleciona a anotação que deseja editar ou arquivar
+    \item O sistema disponibiliza uma janela onde o usuário pode editar os campos de título e conteúdo da anotação
+    \item O sistema disponibiliza ao usuário as etiquetas registradas
+    \item O usuário preenche os campos de título, conteúdo e as etiquetas desejadas
+    \item O usuário sinaliza que deseja salvar a anotação com os conteúdos inseridos
+    \item Caso os campos de conteúdo e título não sejam nulos ou vazios, a anotação será salva
+    \item Após a anotação ser salva, o usuário será levado à tela principal
+    \item Caso os campos de conteúdos sejam nulos ou vazios a anotação não será salva e o sistema informará o erro ao usuário
+\end{enumerate}
+
+% Área de funcionalidade
+\subsection{Apagar anotações}
+% subfluxo
+\subsubsection{Apagar anotação}
+\begin{enumerate}
+    \item O usuário aciona que deseja deletar uma anotação em uma anotação existente
+    \item O sistema questiona o usuário se ele realmente deseja realizar essa operação
+    \item Se o usuário confirmar o desejo, a anotação é excluída
+    \item Se o usuário não confirmar a operação de apagar anotação, o sistema simplesmente retorna à tela principal
+\end{enumerate}
+
+% \section{Fluxos excepcionais}
+
+% \subsection{Editar anotação de forma inválida}
+
+% \section{Subfluxos}
+% Nenhum especificado
+
+% \section{Cenários Chave}
+
+% \section{Condições prévias}
+
+% \section{Condições posteriores}
+
+% \section{Pontos de extensão}
+
+% \section{Requisitos especiais}
+
+% \section{Informações adicionais}
 
 % \chapter{Lições Aprendidas}
 %[Liste as lições aprendidas na retrospectiva, com ênfase especial nas ações a serem tomadas para melhorar, por exemplo: o ambiente de desenvolvimento, o processo ou a colaboração da equipe.]
