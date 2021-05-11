@@ -145,10 +145,10 @@
 % ---
 % Informações de dados para CAPA e FOLHA DE ROSTO
 % ---
-\titulo{NotoriousNote \\ \huge{Visão do Projeto}}
+\titulo{NotoriousNote \\ \huge{Visão do Projeto} \\ \Large{Abordagem Ágil}}
 \autor{Equipe EmptyCoffeeCups \\ Davi Antônio da Silva Santos \and Marcos Adriano \and Jonathan Jorge Barbosa Oliveira \and Wellington Jonathan}
 \local{Brasília, Distrito Federal, Brasil}
-\data{2021, 2021.05.04-preview}
+\data{2021, 2021.05.10}
 \instituicao{%
   Universidade de Brasília -- UnB
   \par
@@ -332,6 +332,7 @@
 27/04/2021 & 2021.04.27 & \begin{tabular}{@{}p{0.6\textwidth}@{}}Corrigir corte na ilustração do diagrama de casos de uso \\ Adicionar requisitos RF24 e RF25\\Corrigir erros ortográficos\\Adicionar identificador para casos de uso e atores\\Criar tabela para atores\\Adicionar requisitos RF24 e RF25 ao caso de uso UC01\\Corrigir formatação de figuras e tabelas\\Modificar nomenclatura das partes do documento de visão e título do capítulo de requisitos tradicionais\end{tabular} & Equipe EmptyCoffeCups \\ \midrule
 03/05/2021 & 2021.05.03-preview & Início da descrição do UC01 & Equipe EmptyCoffeCups \\ \midrule
 04/05/2021 & 2021.05.04-preview & Descrição do UC01 e de seus fluxos alternativos & Equipe EmptyCoffeCups \\ \midrule
+10/05/2021 & 2021.05.10 & \begin{tabular}{@{}p{0.6\textwidth}@{}}Separar documentos de visão em abordagem ágil e tradicional \\ Remover partes da abordagem tradicional e especificação de casos de uso \\ Corrigir tabela de planejamento de gerência para refletir a mudança de paradigma da Engenharia de Requisitos \\ Atualizar MVP para especificar somente o que foi planejado para ser feito durante a etapa ágil \\ Remover lista de figuras \\ Atualizar Android Studio de 4.1.3 para 4.2 \\ Atualizar Flutter de 2.0.4 para 2.0.6 \\ Atualizar Kotlin para 1.5.0 \\ Especificar a diferença entre o Gradle e o Gradle Plug-in \\ Atualizar extensão Kotlin da versão 1.4.31-release-Studio4.1 para 202-1.5.0-release-764-AS8194.7 \\ Atualizar plug-in Dart de 201.9335 para 202.8488 \\ Atualizar plug-in Flutter de 55.1.1 para 56.0.2 \\ Correções de formatação\end{tabular} & Davi Antônio da Silva Santos\\ \midrule
  & & & \\ \bottomrule
 \end{longtable}
 \cleardoublepage
@@ -339,9 +340,9 @@
 % ---
 % inserir lista de ilustrações
 % ---
-\pdfbookmark[0]{\listfigurename}{lof}
-\listoffigures*
-\cleardoublepage
+% \pdfbookmark[0]{\listfigurename}{lof}
+% \listoffigures*
+% \cleardoublepage
 % ---
 
 % ---
@@ -481,16 +482,7 @@ Usuário & Pessoas que utilizarão o aplicativo & \makecell[c{p{0.5\textwidth}}]
 \section{Mínimo Produto Viável (MVP)}
 %[Forneça uma lista de características mínimas que o produto deve possuir para que possa ser lançado]
 \begin{itemize}
-    % \item Aplicação deve ser executável em sistemas operacionais móveis Android com suporte as APIs 24 a 30;
-    \item Criar, apagar, editar e visualizar de notas de texto com título e conteúdo;
-    \item Criar, apagar, editar e visualizar etiquetas;
-    \item Atribuir etiquetas a uma anotação;
-    % \item Exportar notas e listas de tarefas em texto puro;
-    \item Visualizar notas por etiquetas específicas.
-    % \item Criação de listas de tarefa com título e tarefas que podem ser registradas como terminadas ou não;
-    % \item Capacidade de salvar notas e listas de tarefa em nuvem (Cloud Firestore);
-    % \item Capacidade de exportar notas e listas de tarefas em JSON;
-    % \item Capacidade de ler notas e listas de tarefas salvas localmente em JSON.
+    \item Criar, apagar, editar e visualizar de notas de texto com título e conteúdo.
 \end{itemize}
 
 \chapter{Visão Geral do Projeto}
@@ -546,13 +538,13 @@ Desenvolvedor & Computador & \makecell[c{p{0.27\textwidth}}]{Interface USB \\ M�
 \toprule
 \textbf{Perfil} & \textbf{Tipo} & \textbf{Nome} & \textbf{Versão} & \textbf{Licenças}  & \textbf{Observação} \\ \midrule
 Todos & Controle de Versão & Git & 2.25.1 ou superior & 04  & - \\ \midrule
-Todos & IDE & Android Studio & 4.1.3 & 04  & - \\ \midrule
-Todos & SDK & Flutter & 2.0.4 & 04  & - \\ \midrule
-Todos & Linguagem de programação & Dart & 2.12.2 & 04  & - \\ \midrule
-Todos & Linguagem de programação & Kotlin & 1.4.32 & 04  & - \\ \midrule
-Todos & Extensão do Android Studio & Dart & 201.9335 & 04  & - \\ \midrule
-Todos & Extensão do Android Studio & Flutter & 55.1.1 & 04  & - \\ \midrule
-Todos & Extensão do Android Studio & Kotlin & 1.4.31-release-Studio4.1-1 & 04  & - \\ \midrule
+Todos & IDE & Android Studio & 4.2 & 04  & - \\ \midrule
+Todos & SDK & Flutter & 2.0.6 & 04  & - \\ \midrule
+Todos & Linguagem de programação & Dart & 2.12.3 & 04  & - \\ \midrule
+Todos & Linguagem de programação & Kotlin & 1.5.0 & 04  & - \\ \midrule
+Todos & Extensão do Android Studio & Dart & 202.8488 & 04  & - \\ \midrule
+Todos & Extensão do Android Studio & Flutter & 56.0.2 & 04  & - \\ \midrule
+Todos & Extensão do Android Studio & Kotlin & 202-1.5.0-release-764-AS8194.7 & 04  & - \\ \midrule
 Todos & Pacote Flutter & provider & \^{}5.0.0 & 04 & - \\ \midrule
 Todos & Pacote Flutter & sqflite & \^{}2.0.0+3 & 04 & - \\ \midrule
 Todos & Pacote Flutter & firebase\_core & \^{}1.0.2 & 04 & - \\ \midrule
@@ -560,7 +552,8 @@ Todos & Pacote Flutter & firebase\_auth & \^{}1.0.1 & 04  & - \\ \midrule
 Todos & Pacote Flutter & cloud\_firestore & \^{}1.0.3 & 04  & - \\ \midrule
 Todos & Dependência Android & google-services & 4.3.5 & 04  & - \\ \midrule
 Todos & Dependência Android & firebase-bom & 26.8.0 & 04  & - \\ \midrule
-Todos & Ferramenta de compilação & gradle & 4.1.3 & 04  & - \\ \midrule
+Todos & Ferramenta de compilação & gradle-plug-in & 4.2 & 04  & - \\ \midrule
+Todos & Ferramenta de compilação & gradle & 6.9 & 04  & - \\ \midrule
 Todos & Ferramenta de compilação & Android SDK Build Tools & 30.0.3 & 04  & - \\ \bottomrule
 \end{tabular}%
 \end{table}
@@ -574,14 +567,14 @@ Todos & Ferramenta de compilação & Android SDK Build Tools & 30.0.3 & 04  & - 
 \caption{Planejamento de gerência de projeto}%
 \label{tab:fases_iteracoes}%
 }{% p{0.14\textwidth} %\makecell[c{p{0.27\textwidth}}]{}
-\begin{tabular}{@{}llll@{}}
+\begin{tabular}{@{}lllp{0.7\textwidth}@{}}
 \toprule
 \textbf{Sprint} & \textbf{Início} & \textbf{Fim} & \textbf{Incrementos Esperados} \\ \midrule
-1 & 02/02 & 18/02 & \makecell{Atividades da unidade 1 \\ Sugestão de ideia de projeto \\ Primeira versão do documento de visão} \\ \midrule
-2 & 23/02 & 11/03 & \makecell{Atividades da unidade 2 \\ Atualização do documento de visão} \\ \midrule
-3 & 16/03 & 01/04 & \makecell{Atividades da unidade 3 \\ Atualização do documento de visão \\ Configuração do ambiente de desenvolvimento \\ Geração do primeiro APK em modo \textit{debug} para testar ambiente} \\ \midrule
-4 & 06/04 & 22/04 & \makecell{Atividades da unidade 4 \\ Atualização do documento de visão \\ Geração do segundo APK em modo \textit{debug}} \\ \midrule
-5 & 27/04 & 13/05 & \makecell{Atividades da unidade 5 \\ Geração da APK otimizada para lançamento \\ Entrega da versão final do documento de visão} \\ \bottomrule
+1 & 02/02 & 18/02 & \begin{tabular}{@{}p{0.7\textwidth}@{}}Atividades da unidade 1 \\ Sugestão de ideia de projeto \\ Primeira versão do documento de visão\end{tabular} \\ \midrule
+2 & 23/02 & 11/03 & \begin{tabular}{@{}p{0.7\textwidth}@{}}Atividades da unidade 2 \\ Atualização do documento de visão\end{tabular} \\ \midrule
+3 & 16/03 & 01/04 & \begin{tabular}{@{}p{0.7\textwidth}@{}}Atividades da unidade 3 \\ Atualização do documento de visão \\ Configuração do ambiente de desenvolvimento \\ Geração do primeiro APK em modo \textit{debug} para testar ambiente\end{tabular} \\ \midrule
+4 & 06/04 & 22/04 & \begin{tabular}{@{}p{0.7\textwidth}@{}}Início das atividades da unidade 4 (abordagem tradicional) \\ Atualização do documento de visão \\ Geração do APK em modo \textit{release} com funcionalidades do MVP\end{tabular} \\ \midrule
+5 & 27/04 & 13/05 & \begin{tabular}{@{}p{0.7\textwidth}@{}}Separar documentos de visão entre abordagem ágil e tradicional \\ Separar repositórios em código desenvolvido com as histórias e com os casos de uso \\ Revisar documentos de visão \\ Revisão da APK otimizada para lançamento entregue na unidade 4 \\ Entrega da versão final do documento de visão ágil\end{tabular} \\ \bottomrule
 \end{tabular}%
 }{%\fonte{}%
 }
@@ -800,196 +793,6 @@ NFR01 & Compatibilidade com Android 7 a 11 (APIs 24 a 30) \\ \bottomrule
 }{%\fonte{}%
 }
 \end{table}
-
-\part{Abordagem Tradicional}
-
-
-\chapter{Requisitos tradicionais}
-\section{Necessidades}
-
-\IBGEtabfontsize
-\begin{longtable}{@{}p{0.05\textwidth}p{0.2\textwidth}p{0.05\textwidth}p{0.2\textwidth}p{0.2\textwidth}p{0.2\textwidth}@{}}
-\caption{Necessidades}
-\label{tab:necessidades} \\
-\toprule
-\textbf{Id.} & \textbf{Necessidade} & \textbf{Prioridade} & \textbf{Problema} & \textbf{Solução Atual} & \textbf{Solução Proposta} \\ \midrule
-N1 & Gerenciar anotações & Alta & Dificuldade em organizar múltiplos compromissos de forma eficiente & Gerenciamento dos compromissos em blocos adesivos ou agenda física & Digitalização do processo de registro e gestão das anotações \\ \midrule
-N2 & Cópia de segurança das anotações & Média & Ter acesso às anotações sempre que precisar, mesmo em caso de roubos e perdas & Não é realizado backup das anotações & Digitalizar as anotações possibilitará a cópia eficiente das anotações \\ \midrule
-N3 &Lembrar compromissos & Média & Recordar dos compromissos de forma simples e eficiente & A lembrança dos compromissos é feita analisando a agenda e anotações periodicamente & Elaboração de um sistema que alerta o usuário dos seus lembretes \\ \bottomrule
-\end{longtable}
-
-\section{Requisitos funcionais}
-\IBGEtabfontsize
-\begin{longtable}{@{}p{0.05\textwidth}p{0.95\textwidth}@{}}
-\caption{Requisitos}
-\label{tab:requisitos} \\
-\toprule
-\textbf{Id.} & \textbf{Descrição} \\ \midrule
-RF01 & Para criar uma anotação o usuário deve sinalizar que quer criá-la e fornecer um título ou um conteúdo \\ \midrule
-RF02 & Para ler anotações é necessário que existam anotações criadas \\ \midrule
-RF03 & Ao modificar anotação o usuário deve selecionar uma anotação criada e alterar o campo do título ou conteúdo   \\ \midrule
-RF04 & Para apagar anotações o usuário deve selecionar uma anotação existente e confirmar que deseja apagá-la. \\ \midrule
-
-RF05 & Para criar etiquetas o usuário deve sinalizar que quer criá-la e fornecer um nome. \\ \midrule
-RF06 & Para ler etiquetas o usuário deve selecionar uma etiqueta existente \\ \midrule
-RF07 & Para modificar etiquetas o usuário deve selecionar uma etiqueta que já exista e modificar o seu conteúdo \\ \midrule
-RF08 & Para apagar etiquetas deve ser selecionada, pelo usuário, uma etiqueta existente, e essa ação de apagar deve ser confirmada para que se realize \\ \midrule
-RF09 & Para atribuir etiquetas o usuário deve selecionar uma anotação e uma etiqueta existente \\ \midrule
-
-RF10 & Para realizar uma cópia de segurança na nuvem o usuário deve acessar uma conta já existente, caso não tiver é necessário criar uma nova conta  \\ \midrule
-
-RF11 & Após ter criado a conta o usuário deve confirmar seu e-mail para que sua conta seja validada\\ \midrule
-
-RF12 & Para criar uma lista de tarefas o usuário deve sinalizar que quer criá-la e fornecer um título \\ \midrule
-RF13 & Para ler uma lista de tarefas é necessário que existam listas de tarefas criadas \\ \midrule
-RF14 & Para modificar uma lista de tarefas o usuário deve selecionar uma lista criada e alterar o campo do título \\ \midrule
-RF15 & Para apagar listas de tarefas o usuário deve selecionar uma existente e confirmar que deseja apagá-la \\ \midrule
-
-RF16 & Para criar uma tarefa o usuário deve sinalizar que quer criá-la e fornecer um conteúdo \\ \midrule
-RF17 & Para ler uma tarefa é necessário que esta exista \\ \midrule
-RF18 & Para modificar uma tarefa o usuário deve selecionar uma tarefa e alterar os campos de conteúdo ou de conclusão da tarefa \\ \midrule
-RF19 & Para apagar listas de tarefas o usuário deve selecionar uma existente e confirmar que deseja apagá-la \\ \midrule
-RF20 & O sistema deve encaminhar alerta quando um lembrete for acionado. \\ \midrule
-RF21 & Para um usuário criar um lembrete ele deve sinalizar que quer criá-lo em uma tarefa e configurar os horários que deseja ser notificado\\ \midrule
-RF22 & O usuário pode cronometrar o tempo gasto para executar uma tarefa, que corresponde ao período de tempo entre a criação  e a marcação da tarefa como concluída \\\midrule
-RF23 & Após a criação da conta o usuário pode gerenciar a mesma, podendo alterar a senha e e-mail\\\midrule
-RF24 & Após a criação de uma anotação o usuário pode arquivar a mesma para não visualizar as anotações menos importantes junto com as demais\\\midrule 
-RF25 & Após arquivar uma anotação o usuário pode desarquivar uma anotação para visualizar junto com as demais\\\bottomrule
- 
-\end{longtable}
-
-\section{Casos de uso}
-
-\IBGEtabfontsize
-\begin{longtable}{@{}lll@{}}
-\caption{Relação entre requisitos e casos de uso}
-\label{tab:requisitos_x_casos_de_uso} \\
-\toprule
-\textbf{Id.} & \textbf{Requisitos} & \textbf{Nome} \\ \midrule
-UC01 & RF01, RF02, RF03, RF04, RF24, RF25 & Gerência de Anotações\\ \midrule
-UC02 & RF01, RF05, RF06, RF07, RF08, RF09 & Gerência de Etiquetas\\ \midrule
-UC03 & RF012, RF13, RF14, RF15, RF16, RF17, RF18, RF19, RF21, RF22 & Gerência de Tarefas\\ \midrule
-UC04 & RF10 & Gerência de Backup\\ \midrule
-UC05 & RF10, RF11, RF23 & Gerência de Conta\\ \midrule
-UC06 & RF21, RF22 & Gerência de Notificações\\ \bottomrule
-\end{longtable}
-
-\section{Atores}
-\IBGEtabfontsize
-\begin{longtable}{@{}p{0.05\textwidth}p{0.25\textwidth}p{0.65\textwidth}@{}}
-\caption{Atores e casos de uso relacionados}
-\label{tab:atores} \\
-\toprule
-\textbf{Id.} & \textbf{Atores} & \textbf{Caso de uso} \\ \midrule
-A01 & Usuário & Gerência de Anotações, Gerência de Tarefas, Gerência de Etiquetas, Gerência de Notificações e Gerência de Conta\\ \midrule
-A02 & Cloud Firestore & Gerência de backup\\ \midrule
-A03 & Firebase Auth & Gerência de Conta \\ \bottomrule
-\end{longtable}
-
-\section{Diagrama de casos de uso}
-\begin{figure}[htb]
-    \centering
-    \includegraphics[keepaspectratio=true,width=0.8\textwidth,clip=true,trim=1cm 9cm 1cm 1cm]{notoriousnote-casos-de-uso.pdf}
-    \caption{Diagrama de casos de uso do sistema}
-    \label{fig:diagrama_casos_uso}
-\end{figure}
-
-\part{Especificação de casos de uso}
-
-\chapter{UC01 - Gerência de Anotações}
-
-\section{Descrição} 
-Caso de uso responsável por criar, ler, editar, excluir e arquivar anotações. O usuário interage com a tela principal da aplicação, que disponibiliza as possibilidades de gerência de anotações mencionadas previamente, e uma tela dedicada a edição da anotação.
-
-
-\section{Fluxo básico de eventos}
-
-
-\begin{enumerate}
-    \item O usuário inicia aplicação
-    \item O sistema carrega as anotações existentes
-    \item O usuário ao criar uma anotação preenche os campos título ou corpo.
-    \item O usuário salva a anotação
-    \item O sistema valida se os campos obrigatórios estão preenchidos
-    \item O sistema disponibiliza a anotação salva na tela inicial da aplicação
-    \item O usuário pode apagar a anotação
-    \item O usuário pode editar a anotação
-    \item O usuário pode ler as anotações
-    \item O usuário pode arquivas as anotações
-    
-\end{enumerate}
-
-\section{Fluxos alternativos}
-
-% Área de funcionalidade
-\subsection{Criação de anotações}
-% subfluxo
-\subsubsection{Criar anotação}
-\begin{enumerate}
-    \item O usuário aciona a opção de  criar a anotação
-    \item O sistema disponibiliza uma janela para criação da anotação
-    \item O usuário escreve nos campos de título e conteúdo da anotação
-    \item O usuário seleciona uma das etiquetas disponíveis na aplicação
-    \item O usuário seleciona a opção de salvar a anotação
-    \item A anotação é salva com o título, conteúdo e etiquetas selecionadas pelo usuário
-    \item Caso o título e o conteúdo sejam nulos ou vazios, a anotação não será salva e o sistema informará ao usuário sobre o erro
-    \item Sistema a janela de criação da anotação para ser preenchidos novamente.
-    \item Caso usuário deseje cancelar a criação da anotação ele pode selecionar o botão de sair  
-\end{enumerate}
-
-% Área de funcionalidade
-\subsection{Leitura de anotações}
-% subfluxo
-\subsubsection{Ler anotações}
-\begin{enumerate}
-    \item O usuário ao iniciar a aplicação terá disponível para leitura todas as anotações não excluídas ou arquivadas
-    \item Caso o usuário deseje visualizar as anotações arquivadas, deve selecionar uma tela específica
-\end{enumerate}
-
-% Área de funcionalidade
-\subsection{Edição de anotações}
-% subfluxo
-\subsubsection{Editar anotação}
-\begin{enumerate}
-    \item O usuário seleciona a anotação que deseja editar ou arquivar
-    \item O sistema disponibiliza uma janela onde o usuário pode editar os campos de título e conteúdo da anotação
-    \item O sistema disponibiliza ao usuário as etiquetas registradas
-    \item O usuário preenche os campos de título, conteúdo e as etiquetas desejadas
-    \item O usuário sinaliza que deseja salvar a anotação com os conteúdos inseridos
-    \item Caso os campos de conteúdo e título não sejam nulos ou vazios, a anotação será salva
-    \item Após a anotação ser salva, o usuário será levado à tela principal
-    \item Caso os campos de conteúdos sejam nulos ou vazios a anotação não será salva e o sistema informará o erro ao usuário
-\end{enumerate}
-
-% Área de funcionalidade
-\subsection{Apagar anotações}
-% subfluxo
-\subsubsection{Apagar anotação}
-\begin{enumerate}
-    \item O usuário aciona que deseja deletar uma anotação em uma anotação existente
-    \item O sistema questiona o usuário se ele realmente deseja realizar essa operação
-    \item Se o usuário confirmar o desejo, a anotação é excluída
-    \item Se o usuário não confirmar a operação de apagar anotação, o sistema simplesmente retorna à tela principal
-\end{enumerate}
-
-% \section{Fluxos excepcionais}
-
-% \subsection{Editar anotação de forma inválida}
-
-% \section{Subfluxos}
-% Nenhum especificado
-
-% \section{Cenários Chave}
-
-% \section{Condições prévias}
-
-% \section{Condições posteriores}
-
-% \section{Pontos de extensão}
-
-% \section{Requisitos especiais}
-
-% \section{Informações adicionais}
 
 % \chapter{Lições Aprendidas}
 %[Liste as lições aprendidas na retrospectiva, com ênfase especial nas ações a serem tomadas para melhorar, por exemplo: o ambiente de desenvolvimento, o processo ou a colaboração da equipe.]
