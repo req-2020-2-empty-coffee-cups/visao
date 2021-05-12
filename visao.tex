@@ -148,7 +148,7 @@
 \titulo{NotoriousNote \\ \huge{Visão do Projeto} \\ \Large{Abordagem Ágil}}
 \autor{Equipe EmptyCoffeeCups \\ Davi Antônio da Silva Santos \and Marcos Adriano \and Jonathan Jorge Barbosa Oliveira \and Wellington Jonathan}
 \local{Brasília, Distrito Federal, Brasil}
-\data{2021, 2021.05.10}
+\data{2021, 2021.05.11}
 \instituicao{%
   Universidade de Brasília -- UnB
   \par
@@ -333,6 +333,7 @@
 03/05/2021 & 2021.05.03-preview & Início da descrição do UC01 & Equipe EmptyCoffeCups \\ \midrule
 04/05/2021 & 2021.05.04-preview & Descrição do UC01 e de seus fluxos alternativos & Equipe EmptyCoffeCups \\ \midrule
 10/05/2021 & 2021.05.10 & \begin{tabular}{@{}p{0.6\textwidth}@{}}Separar documentos de visão em abordagem ágil e tradicional \\ Remover partes da abordagem tradicional e especificação de casos de uso \\ Corrigir tabela de planejamento de gerência para refletir a mudança de paradigma da Engenharia de Requisitos \\ Atualizar MVP para especificar somente o que foi planejado para ser feito durante a etapa ágil \\ Remover lista de figuras \\ Atualizar Android Studio de 4.1.3 para 4.2 \\ Atualizar Flutter de 2.0.4 para 2.0.6 \\ Atualizar Kotlin para 1.5.0 \\ Especificar a diferença entre o Gradle e o Gradle Plug-in \\ Atualizar extensão Kotlin da versão 1.4.31-release-Studio4.1 para 202-1.5.0-release-764-AS8194.7 \\ Atualizar plug-in Dart de 201.9335 para 202.8488 \\ Atualizar plug-in Flutter de 55.1.1 para 56.0.2 \\ Correções de formatação\end{tabular} & Davi Antônio da Silva Santos\\ \midrule
+11/05/2021 & 2021.05.11 & \begin{tabular}{@{}p{0.6\textwidth}@{}}Adicionar risco RS07 \\ Iniciar capítulo de lições aprendidas \\ Atualizar tabela de planejamento com as atividades realizadas nas iterações especificadas e corrigindo a formatação \\ Atualização da formatação da seção do MVP \\ Readequação das prioridades de \textit{Must} para \textit{Should} das histórias US06 e US22 a US25 devido às mudanças no MVP ágil \end{tabular} & Equipe EmptyCoffeCups \\ \midrule
  & & & \\ \bottomrule
 \end{longtable}
 \cleardoublepage
@@ -481,8 +482,12 @@ Usuário & Pessoas que utilizarão o aplicativo & \makecell[c{p{0.5\textwidth}}]
 
 \section{Mínimo Produto Viável (MVP)}
 %[Forneça uma lista de características mínimas que o produto deve possuir para que possa ser lançado]
+O mínimo produto viável (MVP) deve possuir as seguintes características funcionais:
 \begin{itemize}
-    \item Criar, apagar, editar e visualizar de notas de texto com título e conteúdo.
+    \item Criar notas de texto com título e conteúdo;
+    \item Apagar, editar e visualizar notas de texto com título e conteúdo;
+    \item Editar e visualizar notas de texto com título e conteúdo;
+    \item Visualizar de notas texto com título e conteúdo.
 \end{itemize}
 
 \chapter{Visão Geral do Projeto}
@@ -569,12 +574,12 @@ Todos & Ferramenta de compilação & Android SDK Build Tools & 30.0.3 & 04  & - 
 }{% p{0.14\textwidth} %\makecell[c{p{0.27\textwidth}}]{}
 \begin{tabular}{@{}lllp{0.7\textwidth}@{}}
 \toprule
-\textbf{Sprint} & \textbf{Início} & \textbf{Fim} & \textbf{Incrementos Esperados} \\ \midrule
-1 & 02/02 & 18/02 & \begin{tabular}{@{}p{0.7\textwidth}@{}}Atividades da unidade 1 \\ Sugestão de ideia de projeto \\ Primeira versão do documento de visão\end{tabular} \\ \midrule
-2 & 23/02 & 11/03 & \begin{tabular}{@{}p{0.7\textwidth}@{}}Atividades da unidade 2 \\ Atualização do documento de visão\end{tabular} \\ \midrule
-3 & 16/03 & 01/04 & \begin{tabular}{@{}p{0.7\textwidth}@{}}Atividades da unidade 3 \\ Atualização do documento de visão \\ Configuração do ambiente de desenvolvimento \\ Geração do primeiro APK em modo \textit{debug} para testar ambiente\end{tabular} \\ \midrule
-4 & 06/04 & 22/04 & \begin{tabular}{@{}p{0.7\textwidth}@{}}Início das atividades da unidade 4 (abordagem tradicional) \\ Atualização do documento de visão \\ Geração do APK em modo \textit{release} com funcionalidades do MVP\end{tabular} \\ \midrule
-5 & 27/04 & 13/05 & \begin{tabular}{@{}p{0.7\textwidth}@{}}Separar documentos de visão entre abordagem ágil e tradicional \\ Separar repositórios em código desenvolvido com as histórias e com os casos de uso \\ Revisar documentos de visão \\ Revisão da APK otimizada para lançamento entregue na unidade 4 \\ Entrega da versão final do documento de visão ágil\end{tabular} \\ \bottomrule
+\textbf{Sprint} & \textbf{Início} & \textbf{Fim} & \textbf{Incrementos} \\ \midrule
+1 & 02/02 & 18/02 & \begin{tabular}{@{}p{0.7\textwidth}@{}}\textbf{Atividades realizadas na unidade 1} (inicialização) \\ Sugestão de ideia de projeto \\ Primeira versão do documento de visão\end{tabular} \\ \midrule
+2 & 23/02 & 11/03 & \begin{tabular}{@{}p{0.7\textwidth}@{}}\textbf{Atividades realizadas na unidade 2} (abordagem ágil) \\ Criação de repositórios no Github para versionamento dos requisitos SAFe, \textit{backlogs} e código fonte \\ Elaboração do quadro \textit{Lean Inception} na plataforma Mural \\ Organização dos requisitos na estrutura SAFe \\ Elaboração do \textit{backlog} do produto \\ Organização dos requisitos SAFe em quadros Kanban (Github) \\ Atualização do documento de visão\end{tabular} \\ \midrule
+3 & 16/03 & 01/04 & \begin{tabular}{@{}p{0.7\textwidth}@{}}\textbf{Atividades realizadas na unidade 3} (abordagem ágil) \\ Atualização da estrutura de requisitos SAFe \\ Atualização do \textit{backlog} do produto \\ Atualização do \textit{backlog} da \textit{sprint} \\ Atualização dos quadros Kanban \\ Elaboração de vídeo detalhando o estado do projeto \\ Atualização do documento de visão \\ Configuração do ambiente de desenvolvimento \\ Geração do primeiro APK em modo \textit{debug} para testar ambiente de desenvolvimento\end{tabular} \\ \midrule
+4 & 06/04 & 22/04 & \begin{tabular}{@{}p{0.7\textwidth}@{}}\textbf{Atividades realizadas na unidade 4} (abordagem tradicional) \\ Geração do APK em modo \textit{release} com funcionalidades do MVP elaborado durante a \textit{sprint} ágil \textit{(atividade da unidade 3 entregue com atraso)}\end{tabular} \\ \midrule
+5 & 27/04 & 13/05 & \begin{tabular}{@{}p{0.7\textwidth}@{}}\textbf{Atividades planejadas para a unidade 05} (abordagem tradicional) \\ Entrega da versão final do documento de visão ágil \\ Entrega do APK revisado devido a mudanças no ambiente de desenvolvimento \\ \textbf{Atividades realizadas na unidade 05} (abordagem tradicional) \\ Separar documentos de visão entre abordagem ágil e tradicional \\ Separar repositórios em código desenvolvido com as histórias e com os casos de uso \\ Revisar documento de visão ágil \\ Revisão da APK otimizada para lançamento entregue na unidade 4 (atualização do Android Studio) \\ Correção do MVP e dos \textit{backlogs} devido a mudança de paradigma da Engenharia de Requisitos \end{tabular} \\ \bottomrule
 \end{tabular}%
 }{%\fonte{}%
 }
@@ -659,6 +664,8 @@ RS03 & Não priorização dos requisitos & Analisar as dependências dos requisi
 RS04 & Má elicitação dos requisitos & Refazer o requisito e todas as partes que o mesmo está envolvido & Alto \\ \midrule
 RS05 & Falta de comunicação da equipe & Reunir para alinhar a equipe & Médio \\ \midrule
 RS06 & Não integração do código & Refatoração do código para permitir integração & Médio \\ \midrule
+RS07 & Perda de integrante da equipe & Redistribuição das atividades entre os integrantes da equipe & Alto \\ \midrule
+
 \end{tabular}%
 }{%\fonte{}%
 }
@@ -762,18 +769,17 @@ FT03 & US01 (1*) & Criar anotações & Eu como usuário desejo criar anotações
 FT03 & US03 (1) & Visualizar anotações & Eu como usuário desejo visualizar anotações para visualizar as que já foram criadas & M\\ \midrule
 FT03 & US04 (2) & Editar anotações & Eu como usuário desejo editar anotações para que possa alterar seus conteúdos sem que seja necessário reescrevê-los completamente & M\\ \midrule
 FT03]& US05 (2) & Deletar anotações & Eu como usuário desejo deletar anotações para remover conteúdos que não são mais necessários & M\\ \midrule
-FT03 & US06 (3) & Etiquetar anotações & Eu como usuário desejo etiquetar anotações para organizá-las & M\\ \midrule
+FT03 & US06 (3) & Etiquetar anotações & Eu como usuário desejo etiquetar anotações para organizá-las & S\\ \midrule
 FT03 & US07 (3) & Agrupar anotações por etiquetas & Eu como usuário desejo agrupar anotações por etiquetas para visualizar apenas as anotações com as etiquetadas selecionadas & S\\ \midrule
 FT03 & US13 (8) & Criar listas de tarefas & Eu como usuário desejo criar listas de tarefas para organizar mais facilmente minhas tarefas e saber quais restam ser feitas & S\\ \midrule
 FT03 & US14 (8) & Consultar anotações & Eu como usuário desejo consultar anotações por conteúdo para facilmente acessar algo que preciso lembrar & S\\ \midrule
 FT03 & US15 (5) & Arquivar anotações & Eu como usuário desejo arquivar anotações para ocultá-las da visualização principal sem que seja necessário excluí-las & S\\ \midrule
-% FT03 & US17 & Habilitar colaboração em anotações & Eu como usuário desejo habilitar colaboração em anotações para poder ter a colaboração de outros usuários nas minhas anotações &\\ \midrule
 FT03 & US18 (8) & Compartilhar anotações com outros aplicativos & Eu como usuário desejo compartilhar anotações para poder utilizá-las em outros aplicativos & C\\ \midrule
 FT03 & US21 (21) & Relatório do tempo de execução de tarefas e notas temporizadas & Eu como usuário desejo criar relatório do tempo de execução de tarefas e anotações temporizadas para poder visualizar o tempo gasto & W\\ \midrule
-FT03 & US22 (5) & Criar etiquetas & Eu como usuário desejo criar etiquetas para organizar minhas anotações & M\\ \midrule
-FT03 & US23 (5) & Editar etiquetas & Eu como usuário desejo editar etiquetas para não precisar criar outra etiqueta & M\\ \midrule
-FT03 & US24 (8) & Deletar etiquetas & Eu como usuário desejo deletar etiquetas para remover as que não são mais necessárias & M\\ \midrule
-FT03 & US25 (5) & Visualizar etiquetas & Eu como usuário desejo visualizar etiquetas para ver quais etiquetas eu já criei & M\\ \midrule
+FT03 & US22 (5) & Criar etiquetas & Eu como usuário desejo criar etiquetas para organizar minhas anotações & S\\ \midrule
+FT03 & US23 (5) & Editar etiquetas & Eu como usuário desejo editar etiquetas para não precisar criar outra etiqueta & S\\ \midrule
+FT03 & US24 (8) & Deletar etiquetas & Eu como usuário desejo deletar etiquetas para remover as que não são mais necessárias & S\\ \midrule
+FT03 & US25 (5) & Visualizar etiquetas & Eu como usuário desejo visualizar etiquetas para ver quais etiquetas eu já criei & S\\ \midrule
 FT04 & US08 (5) & Verificar tempo de duração de uma anotação & Eu como usuário desejo que seja possível especificar a data de término de um lembrete para a anotação especificada usando tempo relativo ao início para que não seja necessário especificar tempo absoluto na data de término & W\\ \midrule
 FT04 & US16 (21) & Configurar alarmes & Eu como usuário desejo configurar lembretes nas anotações para poder ser alertado por eles & W\\ \midrule
 FT04 & US19 (8) & Cronometrar tempo de execução de tarefas em listas & Eu como usuário desejo cronometrar tempo de execução de tarefas listadas em uma anotação para saber o tempo gasto & W\\ \bottomrule
@@ -794,8 +800,36 @@ NFR01 & Compatibilidade com Android 7 a 11 (APIs 24 a 30) \\ \bottomrule
 }
 \end{table}
 
-% \chapter{Lições Aprendidas}
-%[Liste as lições aprendidas na retrospectiva, com ênfase especial nas ações a serem tomadas para melhorar, por exemplo: o ambiente de desenvolvimento, o processo ou a colaboração da equipe.]
+\chapter{Lições Aprendidas}
+% [Liste as lições aprendidas na retrospectiva, com ênfase especial nas ações a serem tomadas para melhorar, por exemplo: o ambiente de desenvolvimento, o processo ou a colaboração da equipe.]
+Durante o decorrer da disciplina sobre o paradigma da Engenharia de Requisitos Ágil a equipe adquiriu conhecimentos relativos ao desenvolvimento de aplicações móveis usando a tecnologia Flutter sob a perspectiva de agilidade. Também foi possível adquirir experiência no \textit{frameworks} Scrum e SAFe, bem como na elaboração de um documento de visão adaptado para agilidade, no uso de \textit{workshops} de requisitos, utilizamos o processo  \textit{Lean Inception} para levantamento dos Requisito, na priorização de histórias usando o método \textit{MoSCoW} e na estimativa da dificuldade das histórias usando \textit{Planning Poker}.
+
+Devido a um descuido na observância das diretrizes de execução da disciplina, a equipe foi surpreendida pela mudança do paradigma da Engenharia de Requisitos entre as unidades 3 e 4, o que prejudicou o planejamento das iterações e exigiu retrabalho do documento de visão. Essa falta não estava prevista no gerenciamento de riscos, e gerou a necessidade de ajustes no MVP, que previa a continuidade do desenvolvimento ágil durante toda a execução da disciplina, e impossibilitou o emprego da técnica de estimativa \textit{velocity}, visto que foi possível a execução de somente uma iteração ágil.
+
+A decisão equivocada de planejar o projeto seguindo a perspectiva ágil até o final também levou ao atraso de um dos entregáveis exigidos na terceira iteração, uma aplicação que contivesse o que foi previsto no MVP. Como consequência, essa entrega se atrasou, pois originalmente não era planejado entregar um executável funcional até a quarta iteração do projeto.
+
+Além disso, enquanto a equipe corrigia o atraso da entrega da terceira unidade para que fosse disponibilizado um executável ainda na quarta iteração, um dos membros da equipe não pode colaborar por motivos de força maior, o que também era um risco não previsto. Isso gerou um atraso na atualização do documentos de visão e dos outros artefatos relacionados à execução da iteração ágil, e houve dificuldades para completar os artefatos atrasados e entregá-los junto aos exigidos para o início da etapa tradicional.
+
+Os problemas citados anteriormente só foram resolvidos na quinta iteração. Apesar do executável ser entregue junto do pacote da quarta iteração, as atualizações exigidas no documento de visão, que precisou também ser desacoplado em dois, um ágil e outro tradicional, no MVP, nos quadros Kanban e nos repositórios só foram concluídas nessa iteração. Além disso, para cobrir o risco de um dos componentes da equipe se tornar indisponível, foi adicionado ao gerenciamento de riscos o risco RS07.
+
+
+
+% Foi utilizada a técnica do \textit{planning poker} para estimação da dificuldade das tarefas.
+
+% \begin{itemize}
+% \section{Gerenciamento de atividades}
+% \item  Construção de produto de software por meio do processo \textit{Lean Inception} Utilizando a ferramenta Mural
+% \item Elaboração de requisitos de software utilizando historias de usuário.
+% \item Declaração de problema visando construção de um MVP.
+% \section{Gerenciamento de atividades}
+% \item Gerenciamento de atividade utilizando Scrum
+% \item Construção dos requisitos de Software utilizando SAFE.
+% \item Entendimento sobre a Temas Estratégicos, Épicos, \textit{Feature}, Histórias de usuários.
+% \section{Priorização de requisitos}
+% \item Levantamento dos requisitos a partir do processo \textit {Lean Inception}
+% \item Priorização das histórias com MoSCoW
+% \item Priorização de requisitos visando construir um MVP.
+% \end{itemize}
 
 % ----------------------------------------------------------
 % Capitulo com exemplos de comandos inseridos de arquivo externo
